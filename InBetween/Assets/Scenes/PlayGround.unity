@@ -3519,7 +3519,7 @@ GameObject:
   - component: {fileID: 1475961657}
   - component: {fileID: 1475961656}
   m_Layer: 0
-  m_Name: obj 1
+  m_Name: Interaction Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3681,7 +3681,7 @@ GameObject:
   - component: {fileID: 1497569163}
   - component: {fileID: 1497569162}
   m_Layer: 0
-  m_Name: Ghost (1)
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3837,7 +3837,7 @@ Transform:
   m_GameObject: {fileID: 1497569161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.8, y: 1.67, z: 0.2}
+  m_LocalPosition: {x: -35, y: 1.67, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10160,8 +10160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f2ce97514194d4abe230725bf3d108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  WalkSpeed: 2
-  SprintSpeed: 5.335
+  WalkSpeed: 3
+  SprintSpeed: 5
   SpeedChangeRate: 3
   sprintKey: 304
   JumpForce: 5
