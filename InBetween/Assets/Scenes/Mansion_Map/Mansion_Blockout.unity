@@ -9271,10 +9271,10 @@ MonoBehaviour:
     m_Bits: 8
   enableZoom: 1
   zoomFOV: 30
-  normalFOV: 30
+  normalFOV: 40
   zoomSmoothSpeed: 5
   enableSprintFOV: 1
-  sprintFOV: 40
+  sprintFOV: 50
   sprintFOVSmoothSpeed: 3
 --- !u!114 &352549632
 MonoBehaviour:
@@ -20250,7 +20250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &596058749
 Light:
   m_ObjectHideFlags: 0

@@ -1,0 +1,822 @@
+fileFormatVersion: 2
+guid: ca5a7264f13232f498e8dfd7d2802e65
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2592
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c444c8614ac53248acfca8f221c770c
+      internalID: -38267988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_1
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2592
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e08eb64358130364ba7a3953545f3892
+      internalID: 1479666377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_2
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2592
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc9acada4480064ba743a67796fb39e
+      internalID: -811196032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_3
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 2592
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec25df74b0067714a992ceaf36df95ea
+      internalID: 1208420228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_4
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2592
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cea643a2f8875d418952ac762878a08
+      internalID: 1440439138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_5
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2592
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26d269e7062b17429a25c75ec5e31b0
+      internalID: -979323577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1944
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2bc1c4d23b85324491feafdb7114504
+      internalID: -425777649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_7
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1944
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e2d3dd19e4a77409bd098f2827a277
+      internalID: 1943483035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_8
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1944
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d5f28e1effec64db8a6e2f5230b83b
+      internalID: 1163523981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_9
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 1944
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41a1c2ed16778340a7ffb7c37cc24dc
+      internalID: 703098397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_10
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1944
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e275eafaae1a14a4695dfaa875da3578
+      internalID: 1064601093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_11
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1944
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a189435242e57439a9bdf42fc92383
+      internalID: -1053012097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1296
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea263f44e824aeb45a316095f6744830
+      internalID: -1813286954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_13
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1296
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795e006337e2931408f5d81e7b482a01
+      internalID: -1490273745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_14
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1296
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e567e0354be9dd44860bb25ea919b97
+      internalID: -1497589401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_15
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 1296
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ab14f612e7e6041bb4d00f3e36769f
+      internalID: -428713906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_16
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1296
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da011901761b5664a9065aa2d43f36e3
+      internalID: -1905303791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_17
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1296
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd16ac6a5251094bbfc0e65fd18a33c
+      internalID: -1921154714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd22b70c380c174dae64858ff62a88c
+      internalID: 2128678583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_19
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 648
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e09486c18a8ae4f8669634dbbc7931
+      internalID: -287419923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_20
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 648
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c4a81c1a15ba44ca0015c842a03e24
+      internalID: -893108005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_21
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 648
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa700730fa530844b5649ae48743315
+      internalID: -738010486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_22
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 648
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc71ae7d0983374ba2ce56ecef3b9e0
+      internalID: -148145577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_23
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 648
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90055275261f364b83d5bfbdcffa12d
+      internalID: -1092401843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1a40cfa567f60478085bdcdb0f2a6f
+      internalID: -1706855018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_25
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f549d4f6eb9e11742817ba4f45e51c7d
+      internalID: 86555483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_26
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8c115370478c34ca62f75bf6575b13
+      internalID: 336913371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_27
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e02e1ea6fa1bf40bfd65071f571202
+      internalID: -1595602250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_28
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98cd7d9ae0073f4eb7dc5639fdbf6a2
+      internalID: 1139705033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EyeMouthSpriteSheet1920X1296_29
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 960
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc66c6fcc1a99d41999f396b168db9f
+      internalID: 1698253084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bb91a5d6c4004134ab092060064a57b7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":5.0},"gridSpriteSize":{"x":960.0,"y":648.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      EyeMouthSpriteSheet1920X1296_0: -38267988
+      EyeMouthSpriteSheet1920X1296_1: 1479666377
+      EyeMouthSpriteSheet1920X1296_10: 1064601093
+      EyeMouthSpriteSheet1920X1296_11: -1053012097
+      EyeMouthSpriteSheet1920X1296_12: -1813286954
+      EyeMouthSpriteSheet1920X1296_13: -1490273745
+      EyeMouthSpriteSheet1920X1296_14: -1497589401
+      EyeMouthSpriteSheet1920X1296_15: -428713906
+      EyeMouthSpriteSheet1920X1296_16: -1905303791
+      EyeMouthSpriteSheet1920X1296_17: -1921154714
+      EyeMouthSpriteSheet1920X1296_18: 2128678583
+      EyeMouthSpriteSheet1920X1296_19: -287419923
+      EyeMouthSpriteSheet1920X1296_2: -811196032
+      EyeMouthSpriteSheet1920X1296_20: -893108005
+      EyeMouthSpriteSheet1920X1296_21: -738010486
+      EyeMouthSpriteSheet1920X1296_22: -148145577
+      EyeMouthSpriteSheet1920X1296_23: -1092401843
+      EyeMouthSpriteSheet1920X1296_24: -1706855018
+      EyeMouthSpriteSheet1920X1296_25: 86555483
+      EyeMouthSpriteSheet1920X1296_26: 336913371
+      EyeMouthSpriteSheet1920X1296_27: -1595602250
+      EyeMouthSpriteSheet1920X1296_28: 1139705033
+      EyeMouthSpriteSheet1920X1296_29: 1698253084
+      EyeMouthSpriteSheet1920X1296_3: 1208420228
+      EyeMouthSpriteSheet1920X1296_4: 1440439138
+      EyeMouthSpriteSheet1920X1296_5: -979323577
+      EyeMouthSpriteSheet1920X1296_6: -425777649
+      EyeMouthSpriteSheet1920X1296_7: 1943483035
+      EyeMouthSpriteSheet1920X1296_8: 1163523981
+      EyeMouthSpriteSheet1920X1296_9: 703098397
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
