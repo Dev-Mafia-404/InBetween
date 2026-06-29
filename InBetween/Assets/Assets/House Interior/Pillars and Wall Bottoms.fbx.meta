@@ -3,7 +3,12 @@ guid: 08920be0612e38f408a29cb53b395edb
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Wood Planks.001
+    second: {fileID: 2100000, guid: 752ed07701855e449a81b119e8857597, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
