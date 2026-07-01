@@ -2689,6 +2689,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (7)
@@ -51378,6 +51386,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: personaloffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (14)
@@ -52376,6 +52396,7 @@ GameObject:
   - component: {fileID: 352549633}
   - component: {fileID: 352549632}
   - component: {fileID: 352549631}
+  - component: {fileID: 352549637}
   m_Layer: 7
   m_Name: PlayerArmature
   m_TagString: Player
@@ -52419,9 +52440,12 @@ MonoBehaviour:
   SprintSpeed: 6
   SpeedChangeRate: 3
   sprintKey: 304
-  JumpForce: 5
+  airControlMultiplier: 0.6
+  JumpForce: 6
   JumpCooldown: 0.5
   jumpKey: 32
+  RiseGravityMultiplier: 1.6
+  FallGravityMultiplier: 2.6
   enableCrouch: 1
   crouchKey: 306
   crouchWalkSpeed: 2
@@ -52430,7 +52454,9 @@ MonoBehaviour:
   crouchLerpSpeed: 5
   standingHeight: 1.8
   crouchingHeight: 0.8
-  LandingAudioClip: {fileID: 8300000, guid: d425fff58c3066140a5432baa87ef208, type: 3}
+  JumpLandAudioClip: {fileID: 8300000, guid: d425fff58c3066140a5432baa87ef208, type: 3}
+  JumpLandAudioVolume: 0.3
+  JumpSoundDelay: 0.45
   FootstepAudioClips:
   - {fileID: 8300000, guid: f5d51c1664d47f643abc66ac9bebb60d, type: 3}
   - {fileID: 8300000, guid: 9d2b3756f61b0ae4282286e9d2fd4f44, type: 3}
@@ -52441,9 +52467,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5b4f7142a0f2dc41ad2b310491a8047, type: 3}
   - {fileID: 8300000, guid: bacc7270a74848d4da52a3d1444c7edf, type: 3}
   - {fileID: 8300000, guid: e642de55a4a135e43bf9dd36544dbc9c, type: 3}
-  FootstepAudioVolume: 0.5
+  FootstepAudioVolume: 0.3
   crouchAudioClips: []
-  crouchAudioVolume: 0.5
+  crouchAudioVolume: 0.15
   Grounded: 1
   GroundedOffset: -0.14
   GroundedRadius: 0.28
@@ -52647,6 +52673,103 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &352549637
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352549629}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!43 &352977578
 Mesh:
   m_ObjectHideFlags: 0
@@ -56284,7 +56407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1207344753617643945, guid: dab5c657faa6e6147a7c073d5124400f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.64
+      value: -57.6
       objectReference: {fileID: 0}
     - target: {fileID: -1207344753617643945, guid: dab5c657faa6e6147a7c073d5124400f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -56292,7 +56415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1207344753617643945, guid: dab5c657faa6e6147a7c073d5124400f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.78
+      value: -11.88
       objectReference: {fileID: 0}
     - target: {fileID: -1207344753617643945, guid: dab5c657faa6e6147a7c073d5124400f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56316,7 +56439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -136574480673445278, guid: dab5c657faa6e6147a7c073d5124400f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.27
+      value: -57.2
       objectReference: {fileID: 0}
     - target: {fileID: -136574480673445278, guid: dab5c657faa6e6147a7c073d5124400f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -56324,7 +56447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -136574480673445278, guid: dab5c657faa6e6147a7c073d5124400f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.78
+      value: -11.88
       objectReference: {fileID: 0}
     - target: {fileID: -136574480673445278, guid: dab5c657faa6e6147a7c073d5124400f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64224,8 +64347,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0182, y: 0.0247}
-  m_SizeDelta: {x: 2.4403, y: 0.8788}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474071440
 MonoBehaviour:
@@ -64792,6 +64915,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (6)
@@ -72552,8 +72683,7 @@ Transform:
   m_LocalPosition: {x: -1.95308, y: 1.92695, z: 2.02321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2046951423}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &646220054
@@ -76550,6 +76680,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (15)
@@ -80917,6 +81055,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (1)
@@ -86511,6 +86657,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (3)
@@ -128415,6 +128569,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (10)
@@ -129572,7 +129734,7 @@ MonoBehaviour:
   interactor: {fileID: 1081401243}
   worldSpaceCanvas: {fileID: 2046951422}
   label: {fileID: 474071440}
-  worldOffset: {x: 0, y: 1, z: 0}
+  worldOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1081401243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137977,6 +138139,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (8)
@@ -138784,6 +138954,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (11)
@@ -141112,6 +141290,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (2)
@@ -144361,10 +144547,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1315111419}
   - component: {fileID: 1315111418}
-  - component: {fileID: 1315111417}
   - component: {fileID: 1315111416}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Tourch and Remote Cam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144414,14 +144599,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &1315111417
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315111414}
-  m_Enabled: 1
 --- !u!20 &1315111418
 Camera:
   m_ObjectHideFlags: 0
@@ -145100,6 +145277,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (9)
@@ -152870,7 +153055,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430973652}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -165260,6 +165445,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (5)
@@ -165737,6 +165930,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (4)
@@ -170829,6 +171030,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (13)
@@ -180717,6 +180926,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door (12)
@@ -192237,7 +192454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2046951420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192308,18 +192525,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046951419}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.46521}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 474071439}
-  m_Father: {fileID: 643024349}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.6860802, y: -0.13094997}
-  m_SizeDelta: {x: 2.9876, y: 1.2598}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 230.307, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2048174398
 GameObject:
@@ -199587,6 +199804,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1622173563}
     m_Modifications:
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 352549637}
+    - target: {fileID: 2215390644280347552, guid: 283f270d8f43d94428c8a48499823684, type: 3}
+      propertyPath: onDoorToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
     - target: {fileID: 7027952195868304995, guid: 283f270d8f43d94428c8a48499823684, type: 3}
       propertyPath: m_Name
       value: Door
@@ -204663,6 +204888,7 @@ SceneRoots:
   - {fileID: 596058750}
   - {fileID: 139124738}
   - {fileID: 1601644453}
+  - {fileID: 2046951423}
   - {fileID: 643024349}
   - {fileID: 1454007460}
   - {fileID: 2075075152}

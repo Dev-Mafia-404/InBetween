@@ -30,6 +30,15 @@ namespace StarterAssets
         [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
 
         // ============================================================================
+        // AIR CONTROL SETTINGS
+        // ============================================================================
+
+        [Header("Air Control")]
+        [Tooltip("Multiplier applied to acceleration while airborne. 1 = same as grounded control, lower values make the player commit more to a jump's direction instead of steering freely mid-air (reduces the 'floaty/gliding' feel).")]
+        [Range(0.1f, 1f)]
+        [SerializeField] private float airControlMultiplier = 0.6f;
+
+        // ============================================================================
         // JUMP SETTINGS
         // ============================================================================
 
@@ -42,6 +51,12 @@ namespace StarterAssets
 
         [Tooltip("Key to jump")]
         [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+
+        [Tooltip("Gravity multiplier applied while ascending (velocity > 0). Higher = shorter, snappier rise instead of a slow, floaty climb.")]
+        [SerializeField] private float RiseGravityMultiplier = 1.6f;
+
+        [Tooltip("Gravity multiplier applied while falling (velocity <= 0). Higher = a heavier, faster fall instead of gliding back down.")]
+        [SerializeField] private float FallGravityMultiplier = 2.6f;
 
         // ============================================================================
         // CROUCH SETTINGS
@@ -72,14 +87,23 @@ namespace StarterAssets
         [Tooltip("Character controller height when crouching")]
         [SerializeField] private float crouchingHeight = 1.0f;
 
-    
+
 
         // ============================================================================
         // AUDIO SETTINGS
         // ============================================================================
 
         [Header("Audio")]
-        public AudioClip LandingAudioClip;
+        [Tooltip("Audio clip played when the player jumps or lands")]
+        [SerializeField] private AudioClip JumpLandAudioClip;
+
+        [Range(0, 1)]
+        [Tooltip("Volume of the jump/land audio clip")]
+        [SerializeField] private float JumpLandAudioVolume = 0.5f;
+
+        [Tooltip("Delay in seconds between the jump being triggered and the sound actually playing")]
+        [SerializeField] private float JumpSoundDelay = 0.0f;
+
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
         [SerializeField] private AudioClip[] crouchAudioClips;
@@ -191,6 +215,13 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
         private float _jumpCooldownDelta;
+
+        // ============================================================================
+        // PRIVATE FIELDS - JUMP AUDIO
+        // ============================================================================
+
+        private bool _jumpSoundPending;
+        private float _jumpSoundTimer;
 
         // ============================================================================
         // PRIVATE FIELDS - ANIMATION
@@ -316,6 +347,7 @@ namespace StarterAssets
             HandleJumpInput();
             HandleCrouchInput();
             ApplyJumpAndGravity();
+            HandleJumpAudio();
             HandleZoomInput();
             HandleSprintFOV();
             UpdateCinemachineFOV();
@@ -455,10 +487,14 @@ namespace StarterAssets
             float speedOffset = 0.1f;
             float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
 
+            // --- Reduce acceleration responsiveness while airborne so direction changes ---
+            // --- feel committed rather than letting the player "steer" freely mid-jump ---
+            float effectiveSpeedChangeRate = Grounded ? SpeedChangeRate : SpeedChangeRate * airControlMultiplier;
+
             // --- Smoothly transition to target speed ---
             if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
             {
-                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
+                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * effectiveSpeedChangeRate);
                 _speed = Mathf.Round(_speed * 1000f) / 1000f;
             }
             else
@@ -517,6 +553,10 @@ namespace StarterAssets
                     _verticalVelocity = JumpForce;
                     if (_hasAnimator)
                         _animator.SetBool(_animIDJump, true);
+
+                    // --- Queue the jump sound to play after the configured delay ---
+                    _jumpSoundPending = true;
+                    _jumpSoundTimer = JumpSoundDelay;
                 }
 
                 // --- Decrement jump cooldown ---
@@ -530,9 +570,42 @@ namespace StarterAssets
                 _input.jump = false;
             }
 
-            // --- Apply gravity using project default ---
-            if (_verticalVelocity < _terminalVelocity)
-                _verticalVelocity += Physics.gravity.y * Time.deltaTime;
+            // --- Apply gravity with asymmetric rise/fall multipliers for a snappier, less floaty arc ---
+            // --- (rise uses a lighter multiplier for a crisp launch, fall uses a heavier one so the ---
+            // --- player drops back down quickly instead of gliding) ---
+            if (_verticalVelocity > -_terminalVelocity)
+            {
+                float gravityMultiplier = _verticalVelocity > 0.0f ? RiseGravityMultiplier : FallGravityMultiplier;
+                _verticalVelocity += Physics.gravity.y * gravityMultiplier * Time.deltaTime;
+                _verticalVelocity = Mathf.Max(_verticalVelocity, -_terminalVelocity);
+            }
+        }
+
+        // ============================================================================
+        // JUMP AUDIO
+        // ============================================================================
+
+        private void HandleJumpAudio()
+        {
+            // --- Return early if no jump sound is queued ---
+            if (!_jumpSoundPending)
+                return;
+
+            _jumpSoundTimer -= Time.deltaTime;
+
+            if (_jumpSoundTimer <= 0.0f)
+            {
+                _jumpSoundPending = false;
+
+                if (JumpLandAudioClip != null)
+                {
+                    AudioSource.PlayClipAtPoint(
+                        JumpLandAudioClip,
+                        transform.TransformPoint(_controller.center),
+                        JumpLandAudioVolume
+                    );
+                }
+            }
         }
 
         // ============================================================================
@@ -752,11 +825,8 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioSource.PlayClipAtPoint(
-                    LandingAudioClip,
-                    transform.TransformPoint(_controller.center),
-                    FootstepAudioVolume
-                );
+                // Jump/land audio is now handled by HandleJumpAudio() with the sound delay
+                // This prevents the sound from playing twice
             }
         }
     }
