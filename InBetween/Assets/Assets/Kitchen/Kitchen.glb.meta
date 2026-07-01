@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 9d5ff81a355afc547bb3e084d35d1021
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base.001
+    second: {fileID: 2100000, guid: 2e164ed847dae2147abe74f8bb9adcf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassMetals
+    second: {fileID: 2100000, guid: a3146ddfc450393488f5e793ec66bdfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handle
+    second: {fileID: 2100000, guid: 0839e55ea3056724096e1ed8aea99ec1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 629db6123e429bb429b08bdf7d71ced9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 16019a8d342403c43a6d5785207201e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SinKHole
+    second: {fileID: 2100000, guid: 7dba25a82496fde4e953650516a23df4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top
+    second: {fileID: 2100000, guid: 21ad485c41a92f5498c0bc7348402ccc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Utensils
+    second: {fileID: 2100000, guid: 087d9ee494f2d784ca7ad4f8c3a51582, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidro colorido
+    second: {fileID: 2100000, guid: dd798632f5c70fd4aa6d758f0951f962, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cromado riscado.002
+    second: {fileID: 2100000, guid: e4043a282252da8478f15b0b04c96b25, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 804e1ce4c496647cfa3f1a1134187c71, type: 3}
+  _removeEmptyRootObjects: 1
+  _scaleFactor: 1
+  _deduplicateResources: 0
+  _deduplicatedStatistics:
+    meshCountBefore: 0
+    meshCountAfter: 0
+    textureCountBefore: 0
+    textureCountAfter: 0
+  _maximumLod: 300
+  _readWriteEnabled: 1
+  _generateColliders: 0
+  _addColliders: 0
+  _swapUvs: 0
+  _generateLightmapUVs: 0
+  _importBlendShapeNames: 1
+  _blendShapeFrameWeight:
+    _option: 0
+    _multiplier: 1
+  _importNormals: 0
+  _importTangents: 0
+  _importCamera: 2
+  _importAnimations: 2
+  _mecanimHumanoidFlip: 0
+  _addAnimatorComponent: 0
+  _animationLoopTime: 1
+  _animationLoopPose: 0
+  _importMaterials: 1
+  _enableGpuInstancing: 0
+  _texturesReadWriteEnabled: 1
+  _generateMipMaps: 1
+  _useSceneNameIdentifier: 1
+  _textureCompression: -50
+  _gltfAsset: '<b>Generator: </b>Khronos glTF Blender I/O v4.5.47
+
+    <b>Version:
+    </b>2.0
+
+    
+
+    <b>Extras: </b>
+
+'
+  optimizeGameObjects: 0
+  materials:
+  - {fileID: -239302050275881172, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: -6478536213147159724, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: -7098565394360792512, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: -1293887620268828351, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: -4973734387028869240, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: -8171365369245577120, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: 7635529757402664878, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: -2360301864221457201, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: 1493126326966834652, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: 354013282032902717, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  textures:
+  - {fileID: -4861300130953650096, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: -9053092204535351034, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: 3289569584854392658, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: -5898962200842800933, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  - {fileID: 7244096691505303387, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+  hasSceneData: 1
+  hasAnimationData: 0
+  hasMaterialData: 1
+  hasTextureData: 1
+  animations: []
+  _extensions:
+  - name: KHR_texture_transform
+    supported: 1
+    used: 1
+    required: 1
+  _textures:
+  - texture: {fileID: -4861300130953650096, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: -9053092204535351034, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: 3289569584854392658, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: -5898962200842800933, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: 7244096691505303387, guid: 9d5ff81a355afc547bb3e084d35d1021, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 0
+  _mainAssetIdentifier: scenes/Scene
+  _importPlugins: []

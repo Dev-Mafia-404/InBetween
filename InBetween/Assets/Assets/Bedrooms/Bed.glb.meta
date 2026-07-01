@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: ee689e9968a7794469eca6bf3bb8d051
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fabric03
+    second: {fileID: 2100000, guid: c3512bbf078fbc243b8838b24af3f323, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fabric03.001
+    second: {fileID: 2100000, guid: f5c6672fa448af24bbd4f3607cd1427c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fabric19
+    second: {fileID: 2100000, guid: 3a64a94245fd52b48bf45e01ec6e3be6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: fc3e5c9201ad148469673815c5ea70cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood_fine_5
+    second: {fileID: 2100000, guid: afff88911db0c3244a54d0d2282048c4, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 804e1ce4c496647cfa3f1a1134187c71, type: 3}
+  _removeEmptyRootObjects: 1
+  _scaleFactor: 2
+  _deduplicateResources: 0
+  _deduplicatedStatistics:
+    meshCountBefore: 0
+    meshCountAfter: 0
+    textureCountBefore: 0
+    textureCountAfter: 0
+  _maximumLod: 300
+  _readWriteEnabled: 1
+  _generateColliders: 0
+  _addColliders: 0
+  _swapUvs: 0
+  _generateLightmapUVs: 0
+  _importBlendShapeNames: 1
+  _blendShapeFrameWeight:
+    _option: 0
+    _multiplier: 1
+  _importNormals: 0
+  _importTangents: 0
+  _importCamera: 2
+  _importAnimations: 2
+  _mecanimHumanoidFlip: 0
+  _addAnimatorComponent: 0
+  _animationLoopTime: 1
+  _animationLoopPose: 0
+  _importMaterials: 1
+  _enableGpuInstancing: 0
+  _texturesReadWriteEnabled: 1
+  _generateMipMaps: 1
+  _useSceneNameIdentifier: 1
+  _textureCompression: -50
+  _gltfAsset: '<b>Generator: </b>Khronos glTF Blender I/O v4.5.47
+
+    <b>Version:
+    </b>2.0
+
+    
+
+    <b>Extras: </b>
+
+'
+  optimizeGameObjects: 0
+  materials:
+  - {fileID: -4879039448138787683, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: -1524094902431614497, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: -4973734387028869240, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: 1397647680629948111, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: 5616634240590073588, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  textures:
+  - {fileID: 4483210205343918039, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: -3591246581735677817, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: 5418424831079055483, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: 5740750886837573049, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: -3158039901669283584, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: -3545993556490253786, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: -5792296098640239685, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: -7097805431902385099, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  - {fileID: 4479039280833694743, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+  hasSceneData: 1
+  hasAnimationData: 0
+  hasMaterialData: 1
+  hasTextureData: 1
+  animations: []
+  _extensions:
+  - name: KHR_materials_specular
+    supported: 1
+    used: 1
+    required: 0
+  - name: KHR_materials_ior
+    supported: 1
+    used: 1
+    required: 0
+  - name: KHR_texture_transform
+    supported: 1
+    used: 1
+    required: 1
+  _textures:
+  - texture: {fileID: 4483210205343918039, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 1
+  - texture: {fileID: -3591246581735677817, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: 5418424831079055483, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 0
+  - texture: {fileID: 5740750886837573049, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 1
+  - texture: {fileID: -3158039901669283584, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: -3545993556490253786, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 0
+  - texture: {fileID: -5792296098640239685, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 0
+  - texture: {fileID: -7097805431902385099, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 1
+  - texture: {fileID: 4479039280833694743, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: 4483210205343918039, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 1
+  - texture: {fileID: -3591246581735677817, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: 5418424831079055483, guid: ee689e9968a7794469eca6bf3bb8d051, type: 3}
+    shouldBeLinear: 1
+    shouldBeNormalMap: 0
+  _mainAssetIdentifier: scenes/Scene
+  _importPlugins: []

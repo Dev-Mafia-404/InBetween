@@ -1,0 +1,128 @@
+fileFormatVersion: 2
+guid: b8a2e9eb069b02d44a634b4e783e8b65
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 513b434992d8f304bb9d88b2464c47f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: burner
+    second: {fileID: 2100000, guid: 5c9e5c7997a6b5d4c9c574ef47f9c71b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gas_stand
+    second: {fileID: 2100000, guid: 1ed16ac4837bd0b42bd64eb5f2f8bf67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass2
+    second: {fileID: 2100000, guid: 8ede007788ce9d74c900e79558420ca2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert71
+    second: {fileID: 2100000, guid: e9fda266dd2651d4f850ab13e1fdc576, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ovem_handle
+    second: {fileID: 2100000, guid: dd58fa3b1ef0083489879ee12a4fb1b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: oven
+    second: {fileID: 2100000, guid: 65820afaf7051a046905035f8bda761f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stove_handle
+    second: {fileID: 2100000, guid: 3c03eb7df63b6254199bc0b113be1917, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 804e1ce4c496647cfa3f1a1134187c71, type: 3}
+  _removeEmptyRootObjects: 1
+  _scaleFactor: 1
+  _deduplicateResources: 0
+  _deduplicatedStatistics:
+    meshCountBefore: 0
+    meshCountAfter: 0
+    textureCountBefore: 0
+    textureCountAfter: 0
+  _maximumLod: 300
+  _readWriteEnabled: 1
+  _generateColliders: 0
+  _addColliders: 0
+  _swapUvs: 0
+  _generateLightmapUVs: 0
+  _importBlendShapeNames: 1
+  _blendShapeFrameWeight:
+    _option: 0
+    _multiplier: 1
+  _importNormals: 0
+  _importTangents: 0
+  _importCamera: 2
+  _importAnimations: 2
+  _mecanimHumanoidFlip: 0
+  _addAnimatorComponent: 0
+  _animationLoopTime: 1
+  _animationLoopPose: 0
+  _importMaterials: 1
+  _enableGpuInstancing: 0
+  _texturesReadWriteEnabled: 1
+  _generateMipMaps: 1
+  _useSceneNameIdentifier: 1
+  _textureCompression: -50
+  _gltfAsset: '<b>Generator: </b>Khronos glTF Blender I/O v3.3.32
+
+    <b>Version:
+    </b>2.0
+
+    
+
+    <b>Extras: </b>
+
+'
+  optimizeGameObjects: 0
+  materials:
+  - {fileID: -876546973899608171, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  - {fileID: -4758785798964612618, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  - {fileID: -4719765685737889345, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  - {fileID: 7207176260503920325, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  - {fileID: -3023702741406969850, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  - {fileID: -1224892225459669131, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  - {fileID: 4668589077547938450, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  - {fileID: -7608143940920126202, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  textures:
+  - {fileID: 3203810816058612732, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  - {fileID: 1880687965485842160, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+  hasSceneData: 1
+  hasAnimationData: 0
+  hasMaterialData: 1
+  hasTextureData: 1
+  animations: []
+  _extensions:
+  - name: KHR_materials_specular
+    supported: 1
+    used: 1
+    required: 0
+  - name: KHR_materials_ior
+    supported: 1
+    used: 1
+    required: 0
+  _textures:
+  - texture: {fileID: 3203810816058612732, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  - texture: {fileID: 1880687965485842160, guid: b8a2e9eb069b02d44a634b4e783e8b65, type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  _mainAssetIdentifier: scenes/Scene
+  _importPlugins: []
