@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 19d6febe49fb80a4fb1422f95be1c309
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 13804, guid: 0000000000000000e000000000000000, type: 0}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 371154
+  packageName: Simple Folder Colorizer
+  packageVersion: 1.0.1
+  assetPath: Assets/YaTools/SimpleFolders/SimpleFolderColorizer/UI/FolderColorizer.uxml
+  uploadId: 921894

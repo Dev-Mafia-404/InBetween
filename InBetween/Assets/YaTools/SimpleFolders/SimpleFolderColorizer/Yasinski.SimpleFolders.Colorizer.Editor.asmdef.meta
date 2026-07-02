@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 89a66d021c1dc81439cd89a6b67e22d2
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 371154
+  packageName: Simple Folder Colorizer
+  packageVersion: 1.0.1
+  assetPath: Assets/YaTools/SimpleFolders/SimpleFolderColorizer/Yasinski.SimpleFolders.Colorizer.Editor.asmdef
+  uploadId: 921894

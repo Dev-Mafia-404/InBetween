@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0588368547f52f1499f78cd60cb060cd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - uiAsset: {fileID: 9197481963319205126, guid: 19d6febe49fb80a4fb1422f95be1c309,
+      type: 3}
+  - colorButtonTemplate: {fileID: 9197481963319205126, guid: 182bc0339501be14fbe5bde836311d2f,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 371154
+  packageName: Simple Folder Colorizer
+  packageVersion: 1.0.1
+  assetPath: Assets/YaTools/SimpleFolders/SimpleFolderColorizer/Editor/FolderColorWindow.cs
+  uploadId: 921894

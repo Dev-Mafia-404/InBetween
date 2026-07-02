@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 797a76f6e3a60f4489a7bd074d596914
+AssetOrigin:
+  serializedVersion: 1
+  productId: 371154
+  packageName: Simple Folder Colorizer
+  packageVersion: 1.0.1
+  assetPath: Assets/YaTools/SimpleFolders/SimpleFolderColorizer/Editor/FolderColorizerPostprocessor.cs
+  uploadId: 921894

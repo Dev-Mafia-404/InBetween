@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e8b3d805854dfe54f9310d83f0cfa8f8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 371154
+  packageName: Simple Folder Colorizer
+  packageVersion: 1.0.1
+  assetPath: Assets/YaTools/SimpleFolders/SimpleFolderColorizer/Editor/FolderColorSettings.asset
+  uploadId: 921894
