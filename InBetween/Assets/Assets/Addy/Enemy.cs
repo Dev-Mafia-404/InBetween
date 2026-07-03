@@ -57,8 +57,22 @@ public class Enemy : MonoBehaviour
     [Tooltip("After losing sight it keeps pushing toward where you were for this long before Searching. Randomized in this range.")]
     public float keepChasingAfterLostMin = 2.5f;
     public float keepChasingAfterLostMax = 4f;
-    [Tooltip("When it can SEE you but can't physically reach you (you climbed onto furniture), it holds position and keeps facing you instead of drifting off to search.")]
+    [Tooltip("When it can SEE you but can't physically reach you (you climbed onto furniture), it plants itself at the closest reachable spot and stares instead of drifting off.")]
     public bool holdAndStareWhenUnreachable = true;
+    [Tooltip("How high above the nearest floor you must be for it to count as 'climbed onto something' (so it stares instead of trying to catch).")]
+    public float climbHeightThreshold = 0.5f;
+    [Tooltip("When approaching an out-of-reach you, it stops staring-distance away from the closest floor spot beneath you.")]
+    public float stareApproachDistance = 1.5f;
+    [Tooltip("How far it searches for a floor spot beneath/near you when you're off the navmesh.")]
+    public float playerNavSampleRadius = 2f;
+
+    [Header("Facing / Turning")]
+    [Tooltip("How fast it turns to face its movement direction while walking/running (degrees/sec). Higher = snappier turns.")]
+    public float moveTurnSpeed = 400f;
+    [Tooltip("How fast it turns to face you while standing and staring (degrees/sec). Higher = snaps to you faster. NOTE: raise this on the component in your scene — the serialized value won't auto-update.")]
+    public float stareTurnSpeed = 720f;
+    [Tooltip("While planted and watching you on furniture, it holds (and keeps facing you) through brief sight flickers for this long before deciding you've really gone.")]
+    public float watchHoldTime = 2f;
 
     [Header("Searching (dynamic — it moves around, doesn't just stand)")]
     [Tooltip("How far from your last known spot it wanders while searching.")]
@@ -76,12 +90,14 @@ public class Enemy : MonoBehaviour
     public float doorReach = 2f;
 
     [Header("Hiding Spots (optional)")]
-    [Tooltip("If on, a loud noise (sprint / slammed door) while hidden gives the player away and blows their cover.")]
-    public bool loudNoiseRevealsHiddenPlayer = true;
-    [Tooltip("Noise reach at or above this counts as 'loud' enough to blow cover.")]
-    public float loudNoiseThreshold = 12f;
-    [Tooltip("Hiding only FAILS if the Enemy is present, actually sees you right now, AND is within this distance when you enter. Bigger = harder to hide in its face. Smaller = easier to slip into cover.")]
+    [Tooltip("PRIMARY RULE: if the Enemy can't SEE you the instant you enter, you hide — regardless of distance. It only FAILS if the Enemy is present AND actually sees you AND is within this range.")]
     public float hideBlownRange = 8f;
+    [Tooltip("If on, being loud (sprinting / slamming a door) while already hidden can give you away — but only after the grace below, and only if the Enemy is actively nearby.")]
+    public bool loudNoiseRevealsHiddenPlayer = true;
+    [Tooltip("Noise reach at or above this counts as 'loud' enough to risk blowing cover.")]
+    public float loudNoiseThreshold = 12f;
+    [Tooltip("Grace after you enter a hiding spot during which noise can't give you away, so diving in while sprinting is safe. Stay quiet after this to stay hidden.")]
+    public float hideNoiseGrace = 1.25f;
 
     [Header("Catch")]
     [Tooltip("If on, touching the player (trigger) fires OnPlayerCaught. Needs a trigger Collider on this object.")]
@@ -110,13 +126,43 @@ public class Enemy : MonoBehaviour
     public Color sightBlockedColor = Color.red;
 
     [Header("Audio (optional)")]
+    [Tooltip("Plays the materialization SFX when it appears.")]
     public AudioSource appearAudioSource;
     public AudioClip appearClip;
+    [Tooltip("Source used for footstep one-shots. Ideally a 3D (spatial) AudioSource on the creature.")]
+    public AudioSource footstepAudioSource;
+    [Tooltip("Footstep clips — one is picked at random per step. Leave empty to disable footsteps.")]
+    public AudioClip[] footstepClips;
+    [Tooltip("Distance travelled between footstep sounds. Smaller = more frequent steps.")]
+    public float footstepStride = 1.6f;
+    [Tooltip("Source used for growls/vocals on state changes.")]
+    public AudioSource voiceAudioSource;
+    [Tooltip("Optional one-shot when it manifests.")]
+    public AudioClip appearVoiceClip;
+    public AudioClip huntStartClip;
+    public AudioClip chaseStartClip;
+    public AudioClip searchStartClip;
+    [Tooltip("Plays when it catches the player.")]
+    public AudioClip caughtClip;
 
-    [Header("Visibility (placeholder until your materialization shader exists)")]
-    [Tooltip("Renderers to hide while gone and show once manifested. Auto-filled from children if empty.")]
-    public Renderer[] bodyRenderers;
-    [Tooltip("Keep the body hidden for the whole appear window (shown only once it starts hunting).")]
+    [Header("Animation (optional)")]
+    [Tooltip("The creature's Animator. Leave empty to skip all animation calls.")]
+    public Animator animator;
+    [Tooltip("Float parameter driven by move speed (for an idle/walk/run blend). Blank to skip.")]
+    public string speedParam = "Speed";
+    [Tooltip("Int parameter for the state: 0 Idle, 1 Hunting, 2 Chasing, 3 Searching, 4 Watching. Blank to skip.")]
+    public string stateParam = "State";
+    [Tooltip("Trigger fired when it catches the player. Blank to skip.")]
+    public string attackTrigger = "Attack";
+    [Tooltip("Trigger fired when repelled by the torch — plays before it fades out. Blank to skip.")]
+    public string torchTrigger = "Torched";
+    [Tooltip("Trigger fired when it manifests. Blank to skip.")]
+    public string appearTrigger = "Appear";
+
+    [Header("Visibility")]
+    [Tooltip("The creature's visual GameObject (your animating mesh child). Toggled off while gone, on once it manifests. Leave empty for no toggling.")]
+    public GameObject enemyVisual;
+    [Tooltip("Keep the visual hidden through the whole appear window (shown only once it starts hunting).")]
     public bool hideWhileAppearing = true;
 
     [Header("Read-Only State")]
@@ -166,13 +212,19 @@ public class Enemy : MonoBehaviour
     EnemyHidingSpot currentHidingSpot;
     bool playerConcealed;
 
+    // facing / audio / anim
+    bool isWatching;
+    float watchLostTimer;
+    float footstepDistance;
+    int lastAnimState = -1;
+    float concealStartTime = -999f;
+    NavMeshPath reusablePath;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.enabled = false;
-
-        if (bodyRenderers == null || bodyRenderers.Length == 0)
-            bodyRenderers = GetComponentsInChildren<Renderer>(includeInactive: true);
+        reusablePath = new NavMeshPath();
 
         SetVisible(false);
     }
@@ -185,6 +237,11 @@ public class Enemy : MonoBehaviour
         {
             lastKnownPlayerPosition = player.position;
             lastPlayerPosForDir = player.position;
+        }
+        if (agent != null)
+        {
+            agent.angularSpeed = moveTurnSpeed; // snappier turns while moving
+            agent.updateRotation = true;        // face movement direction by default
         }
         SetState(State.Cooldown);
         cooldownTimeRemaining = float.MaxValue; // dormant until the phase manager wakes it
@@ -220,6 +277,8 @@ public class Enemy : MonoBehaviour
             case State.Searching: TickSearching(); break;
             case State.Withdrawn: TickWithdrawn(); break;
         }
+        UpdateFootsteps();
+        UpdateAnimator();
         UpdateStateText();
     }
 
@@ -317,6 +376,9 @@ public class Enemy : MonoBehaviour
             appearAudioSource.Play();
         }
 
+        ClearWatching();
+        PlayVoice(appearVoiceClip);
+        AnimTrigger(appearTrigger);
         OnSpawnStarted?.Invoke();
     }
 
@@ -341,9 +403,11 @@ public class Enemy : MonoBehaviour
 
         SetVisible(true);
         SetSpeed(huntSpeed);
+        ClearWatching();
         SetState(State.Hunting);
         Report("Hunting — closing in.");
         Log($"Hunting for up to {huntDuration:F1}s.");
+        PlayVoice(huntStartClip);
         OnHuntingStarted?.Invoke();
     }
 
@@ -376,9 +440,11 @@ public class Enemy : MonoBehaviour
     {
         SetSpeed(phaseManager != null ? phaseManager.ChaseSpeed : 6f);
         inLostSightGrace = false;
+        ClearWatching();
         SetState(State.Chasing);
         Report(fromSearch ? "Spotted you again — chase on!" : "Spotted you — chase on!");
         Log($"Chasing (LOS acquired, speed={agent.speed:F1}).");
+        PlayVoice(chaseStartClip);
         OnChaseStarted?.Invoke();
     }
 
@@ -388,6 +454,29 @@ public class Enemy : MonoBehaviour
 
         UpdateSightCheck();
 
+        // Planted and watching an out-of-reach player (you're on furniture): hold through brief
+        // sight flickers so it stays locked on instead of jittering off to the side.
+        if (isWatching)
+        {
+            if (hasLOS)
+            {
+                watchLostTimer = 0f;
+                lastKnownPlayerPosition = player.position;
+            }
+            else
+            {
+                watchLostTimer += Time.deltaTime;
+                if (watchLostTimer >= watchHoldTime)
+                {
+                    ClearWatching();
+                    BeginSearching(lastKnownPlayerPosition, "you were up on something, then dropped out of sight");
+                    return;
+                }
+            }
+            PursueOrStare(); // keeps staring, or resumes the chase if you came back down
+            return;
+        }
+
         if (hasLOS)
         {
             if (inLostSightGrace)
@@ -396,13 +485,7 @@ public class Enemy : MonoBehaviour
                 Report("Back in sight — still chasing!");
             }
             lastKnownPlayerPosition = player.position;
-            MoveTowards(lastKnownPlayerPosition);
-            TryOpenDoorIfBlocked();
-
-            // You can be seen but not reached (climbed onto furniture): hold and keep staring.
-            if (holdAndStareWhenUnreachable && agent.enabled && agent.isOnNavMesh &&
-                !agent.pathPending && agent.pathStatus != NavMeshPathStatus.PathComplete)
-                FacePlayer();
+            PursueOrStare();
             return;
         }
 
@@ -415,6 +498,7 @@ public class Enemy : MonoBehaviour
             Log($"LOS broken. Pushing to last known spot for {keepChasingTimer:F1}s before searching.");
         }
 
+        ClearWatching(); // back to moving/searching → face travel direction again
         MoveTowards(lastKnownPlayerPosition);
         TryOpenDoorIfBlocked();
 
@@ -436,10 +520,12 @@ public class Enemy : MonoBehaviour
         inLostSightGrace = false;
 
         SetSpeed(searchSpeed);
+        ClearWatching();
         MoveTowards(searchCenter);
         SetState(State.Searching);
         Report(playerConcealed ? "Searching… (it can't sense you)" : "Searching your last known area.");
         Log($"Searching for {searchTimer:F1}s. Context: {reasonForContext}. Concealed={playerConcealed}.");
+        PlayVoice(searchStartClip);
         OnSearchingStarted?.Invoke();
     }
 
@@ -487,10 +573,13 @@ public class Enemy : MonoBehaviour
 
     void HandleNoiseEvent(Vector3 noisePosition, float reach)
     {
-        // Loud noise can blow a hidden player's cover even while concealed.
+        // Loud noise can blow a hidden player's cover — but only if the Enemy is actually
+        // present to hear it, and only after the entry grace (so diving in while sprinting is safe).
         if (playerConcealed)
         {
-            if (loudNoiseRevealsHiddenPlayer && reach >= loudNoiseThreshold &&
+            bool pastGrace = Time.time - concealStartTime >= hideNoiseGrace;
+            if (loudNoiseRevealsHiddenPlayer && IsActivelyPresent && pastGrace &&
+                reach >= loudNoiseThreshold &&
                 Vector3.Distance(noisePosition, transform.position) <= reach)
             {
                 Log($"Hidden player gave themselves away with a loud noise (reach={reach:F0}). Cover blown.");
@@ -499,7 +588,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                return; // quiet + hidden = safe
+                return; // quiet, or it isn't around, or still within entry grace = safe
             }
         }
 
@@ -544,6 +633,7 @@ public class Enemy : MonoBehaviour
         pendingCooldown = nextCooldown;
         pendingStartCooldown = startCooldownAfter;
         if (agent.enabled) agent.isStopped = true;
+        ClearWatching();
         SetState(State.Withdrawn);
         Log($"Withdrawing. Will {(startCooldownAfter ? $"cool down for {nextCooldown:F0}s" : "stay dormant")} after {disappearTime}s fade.");
         OnWithdrawalStarted?.Invoke();
@@ -617,7 +707,186 @@ public class Enemy : MonoBehaviour
         flat.y = 0f;
         if (flat.sqrMagnitude < 0.001f) return;
         Quaternion target = Quaternion.LookRotation(flat.normalized);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, target, 360f * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, target, stareTurnSpeed * Time.deltaTime);
+    }
+
+    void SetAgentAutoRotate(bool on)
+    {
+        if (agent != null && agent.updateRotation != on) agent.updateRotation = on;
+    }
+
+    /// <summary>Stop watching-mode and hand rotation back to the agent (face travel direction).</summary>
+    void ClearWatching()
+    {
+        isWatching = false;
+        SetAgentAutoRotate(true);
+    }
+
+    /// <summary>
+    /// While it can see you: chase to catch if you're on the ground, otherwise approach the
+    /// closest floor spot beneath you and plant + stare. Never routes through a wall to reach a
+    /// closer-but-wrong-side floor point.
+    /// </summary>
+    void PursueOrStare()
+    {
+        if (!holdAndStareWhenUnreachable)
+        {
+            ClearWatching();
+            MoveTowards(player.position);
+            TryOpenDoorIfBlocked();
+            return;
+        }
+
+        if (TryResolveChaseTarget(out Vector3 target, out bool grounded))
+        {
+            if (grounded)
+            {
+                // You're on the floor — chase to catch, no staring.
+                ClearWatching();
+                MoveTowards(target);
+                TryOpenDoorIfBlocked();
+                return;
+            }
+
+            // You're up on something. Approach the floor beneath you, then plant and stare.
+            // Once staring, KEEP staring (hysteresis) so it doesn't jitter between the two.
+            float d = Vector3.Distance(transform.position, target);
+            bool closeEnough = d <= stareApproachDistance;
+            bool cantGetCloser = !CanReach(target);
+
+            if (isWatching || closeEnough || cantGetCloser)
+                HoldAndStare();
+            else
+            {
+                ClearWatching();
+                MoveTowards(target);
+                TryOpenDoorIfBlocked();
+            }
+        }
+        else
+        {
+            HoldAndStare(); // no valid same-side floor spot (behind a wall / off-mesh)
+        }
+    }
+
+    bool CanReach(Vector3 dest)
+    {
+        if (agent == null || !agent.enabled || !agent.isOnNavMesh) return false;
+        if (!agent.CalculatePath(dest, reusablePath)) return false;
+        return reusablePath.status == NavMeshPathStatus.PathComplete;
+    }
+
+    bool TryResolveChaseTarget(out Vector3 target, out bool grounded)
+    {
+        target = transform.position;
+        grounded = false;
+        if (player == null) return false;
+
+        if (!NavMesh.SamplePosition(player.position, out NavMeshHit hit, playerNavSampleRadius, NavMesh.AllAreas))
+            return false;
+
+        Vector3 nav = hit.position;
+
+        // The floor spot must be able to actually see you — stops it walking around into the next
+        // room (e.g. the bathroom) to reach a closer-but-wrong-side navmesh point.
+        if (!RayReachesPlayer(nav + Vector3.up * 0.3f, player.position + Vector3.up * 0.5f))
+            return false;
+
+        float heightAbove = player.position.y - nav.y;
+        Vector3 flat = nav - player.position; flat.y = 0f;
+        grounded = flat.magnitude < 0.75f && heightAbove < climbHeightThreshold;
+
+        target = grounded ? player.position : nav;
+        return true;
+    }
+
+    void HoldAndStare()
+    {
+        if (agent.enabled && agent.isOnNavMesh)
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero; // plant firmly, no slow drift
+        }
+        SetAgentAutoRotate(false);
+
+        if (!isWatching)
+        {
+            isWatching = true;
+            watchLostTimer = 0f;
+            SnapFacePlayer(); // instant lock-on the moment it plants — no slow turn
+            Report("It plants itself and watches you.");
+        }
+        else
+        {
+            FacePlayer(); // smooth-track if you move around up there
+        }
+    }
+
+    void SnapFacePlayer()
+    {
+        if (player == null) return;
+        Vector3 flat = player.position - transform.position;
+        flat.y = 0f;
+        if (flat.sqrMagnitude < 0.001f) return;
+        transform.rotation = Quaternion.LookRotation(flat.normalized);
+    }
+
+    void PlayVoice(AudioClip clip)
+    {
+        if (voiceAudioSource != null && clip != null) voiceAudioSource.PlayOneShot(clip);
+    }
+
+    void UpdateFootsteps()
+    {
+        if (footstepAudioSource == null || footstepClips == null || footstepClips.Length == 0) return;
+        if (agent == null || !agent.enabled) { footstepDistance = 0f; return; }
+
+        float v = agent.velocity.magnitude;
+        if (v < 0.2f) return; // basically standing still
+
+        footstepDistance += v * Time.deltaTime;
+        if (footstepDistance >= footstepStride)
+        {
+            footstepDistance = 0f;
+            AudioClip clip = footstepClips[Random.Range(0, footstepClips.Length)];
+            if (clip != null) footstepAudioSource.PlayOneShot(clip);
+        }
+    }
+
+    void AnimTrigger(string t)
+    {
+        if (animator != null && animator.isActiveAndEnabled && !string.IsNullOrEmpty(t))
+            animator.SetTrigger(t);
+    }
+
+    int CurrentAnimState()
+    {
+        if (isWatching) return 4;
+        switch (currentState)
+        {
+            case State.Hunting: return 1;
+            case State.Chasing: return 2;
+            case State.Searching: return 3;
+            default: return 0;
+        }
+    }
+
+    void UpdateAnimator()
+    {
+        if (animator == null || !animator.isActiveAndEnabled) return;
+
+        if (!string.IsNullOrEmpty(speedParam))
+            animator.SetFloat(speedParam, (agent != null && agent.enabled) ? agent.velocity.magnitude : 0f);
+
+        if (!string.IsNullOrEmpty(stateParam))
+        {
+            int s = CurrentAnimState();
+            if (s != lastAnimState)
+            {
+                lastAnimState = s;
+                animator.SetInteger(stateParam, s);
+            }
+        }
     }
 
     void UpdateSightCheck()
@@ -743,24 +1012,27 @@ public class Enemy : MonoBehaviour
     {
         currentHidingSpot = spot;
 
-        // Cover only fails if it's actually here, genuinely sees you right now (fresh check,
-        // not a stale cached value), and is close enough to have tracked you in.
-        bool watchingYou = false;
+        // You hide UNLESS the Enemy is present, genuinely sees you right now (fresh check — never a
+        // stale value), and is close enough to have clocked you ducking in. Not present, or no line
+        // of sight, or too far  =  you're hidden.
+        bool blown = false;
         if (IsActivelyPresent && player != null)
         {
+            bool seesYouNow = CanSensePlayer(out _);
             float dist = Vector3.Distance(transform.position, player.position);
-            watchingYou = dist <= hideBlownRange && CanSensePlayer(out _);
+            blown = seesYouNow && dist <= hideBlownRange;
         }
 
-        if (watchingYou)
+        playerConcealed = !blown;
+        if (playerConcealed) concealStartTime = Time.time;
+
+        if (blown)
         {
-            playerConcealed = false;
             Report("You hid — but it's right on you, no good.");
-            Log($"Hiding BLOWN — it's present, sees you now, and within {hideBlownRange}m.");
+            Log($"Hiding BLOWN — present, sees you now, within {hideBlownRange}m.");
         }
         else
         {
-            playerConcealed = true;
             Report("You slip into cover, unseen.");
             Log($"Concealed — {(IsActivelyPresent ? "it can't see you / too far" : "it isn't even around")}. It can't sense you now.");
         }
@@ -794,6 +1066,8 @@ public class Enemy : MonoBehaviour
 
         Report("CAUGHT!");
         Log("Player CAUGHT — firing OnPlayerCaught, then withdrawing.");
+        AnimTrigger(attackTrigger);
+        PlayVoice(caughtClip);
         OnPlayerCaught?.Invoke();
         BeginWithdrawal(phaseManager != null ? phaseManager.CooldownAfterEscape : 180f, true);
     }
@@ -808,6 +1082,7 @@ public class Enemy : MonoBehaviour
         }
         Report("Repelled by the torch!");
         Log("Torch used successfully — withdrawing.");
+        AnimTrigger(torchTrigger);
         BeginWithdrawal(phaseManager != null ? phaseManager.CooldownAfterTorch : 90f, true);
     }
 
@@ -902,9 +1177,7 @@ public class Enemy : MonoBehaviour
 
     void SetVisible(bool visible)
     {
-        if (bodyRenderers == null) return;
-        for (int i = 0; i < bodyRenderers.Length; i++)
-            if (bodyRenderers[i] != null) bodyRenderers[i].enabled = visible;
+        if (enemyVisual != null) enemyVisual.SetActive(visible);
     }
 
     void UpdateStateText()
@@ -922,7 +1195,7 @@ public class Enemy : MonoBehaviour
                 stateText.text = string.Format(manifestingFormat, Mathf.CeilToInt(appearTimer));
                 break;
             case State.Hunting: stateText.text = "Hunting"; break;
-            case State.Chasing: stateText.text = "Chasing"; break;
+            case State.Chasing: stateText.text = isWatching ? "Watching you" : "Chasing"; break;
             case State.Searching: stateText.text = playerConcealed ? "Searching (you're hidden)" : "Searching"; break;
             case State.Withdrawn:
             case State.Frozen:
