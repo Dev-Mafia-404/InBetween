@@ -109,6 +109,9 @@ namespace StarterAssets
         [SerializeField] private AudioClip[] crouchAudioClips;
         [Range(0, 1)][SerializeField] private float crouchAudioVolume = 0.5f;
 
+        [Tooltip("When true, disables footstep and movement audio playback. Used by dialogue system.")]
+        public bool SuppressAudio = false;
+
         // ============================================================================
         // GROUND DETECTION SETTINGS
         // ============================================================================
@@ -807,6 +810,8 @@ namespace StarterAssets
 
         private void OnFootstep(AnimationEvent animationEvent)
         {
+            if (SuppressAudio) return;  // Don't play audio if suppressed (e.g., during dialogue)
+
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
                 if (FootstepAudioClips.Length > 0)

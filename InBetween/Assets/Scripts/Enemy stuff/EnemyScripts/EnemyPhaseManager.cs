@@ -101,6 +101,38 @@ public class EnemyPhaseManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called by GameStateManager on scene load to jump directly to a chapter's
+    /// starting soul count WITHOUT firing OnAwakened / OnPhaseChanged / OnAllSoulsResolved.
+    /// Syncs CurrentPhase to what it should be at that soul count. Existing runtime
+    /// behavior (ReportSoulResolved and its event flow) is unchanged.
+    /// </summary>
+    public void LoadProgress(int souls)
+    {
+        soulsResolved = Mathf.Clamp(souls, 0, totalSouls);
+
+        if (soulsResolved <= 0)
+        {
+            CurrentPhase = Phase.Dormant;
+            Log($"LoadProgress: souls=0 -> phase Dormant (no events fired).");
+            return;
+        }
+
+        if (soulsResolved >= totalSouls)
+        {
+            CurrentPhase = Phase.Dissolved;
+            Log($"LoadProgress: souls={soulsResolved} -> phase Dissolved (no events fired).");
+            return;
+        }
+
+        float ratio = (float)soulsResolved / totalSouls;
+        CurrentPhase = ratio >= startDesperateAt ? Phase.Desperate
+                     : ratio >= startAggressiveAt ? Phase.Aggressive
+                     : Phase.Aware;
+
+        Log($"LoadProgress: souls={soulsResolved} (ratio={ratio:F2}) -> phase {CurrentPhase} (no events fired).");
+    }
+
     void RecalculatePhase()
     {
         if (CurrentPhase == Phase.Dormant || CurrentPhase == Phase.Dissolved) return;
