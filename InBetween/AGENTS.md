@@ -2,7 +2,7 @@
 - Project name: InBetween
 - Unity version: Unity 6000.3.8f1
 - Active game object:
-  - Name: Text (TMP)
+  - Name: SoulParticle
   - Tag: Untagged
-  - Layer: UI
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
