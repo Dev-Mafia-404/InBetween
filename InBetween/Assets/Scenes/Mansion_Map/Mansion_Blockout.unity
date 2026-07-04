@@ -189550,7 +189550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1910723185
 Transform:
   m_ObjectHideFlags: 0
@@ -202395,7 +202395,7 @@ Transform:
   m_GameObject: {fileID: 6709574177353731156}
   serializedVersion: 2
   m_LocalRotation: {x: 0.03970489, y: -0.7383663, z: -0.67322344, w: 0.0030111969}
-  m_LocalPosition: {x: -0.183, y: -1.264, z: 1.692}
+  m_LocalPosition: {x: -0.183, y: -2.04, z: 1.692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -203593,9 +203593,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -203645,7 +203645,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5888889
+      value: 0.15
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -207988,7 +207988,7 @@ Transform:
   m_GameObject: {fileID: 2085582915277223848}
   serializedVersion: 2
   m_LocalRotation: {x: -0.03967851, y: 0.74393994, z: 0.66705924, w: 0.0033413763}
-  m_LocalPosition: {x: -0.35638276, y: -1.5785009, z: 3.0845976}
+  m_LocalPosition: {x: 0.121, y: -1.149, z: 2.463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -213679,14 +213679,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9b33e9b02b237814a9bada5efda2a5dd, type: 3}
   footstepStride: 1.6
   voiceAudioSource: {fileID: 668752721556225015}
-  appearVoiceClip: {fileID: 0}
-  huntStartClip: {fileID: 0}
-  chaseStartClip: {fileID: 8300000, guid: 18b2492a2074c8541996fce7418f4e64, type: 3}
+  appearVoiceClip: {fileID: 8300000, guid: 60f2828ec4f0d044592f850b3319430f, type: 3}
+  huntStartClip: {fileID: 8300000, guid: 6c6fc6a40c586e242a27ec8465f35af2, type: 3}
+  chaseStartClip: {fileID: 8300000, guid: 87ea4e46bcb90aa4d8ae8200e7da4505, type: 3}
   searchStartClip: {fileID: 0}
-  caughtClip: {fileID: 8300000, guid: 6301fbe78040a2944ae549232ae7d2b6, type: 3}
+  caughtClip: {fileID: 8300000, guid: 87ea4e46bcb90aa4d8ae8200e7da4505, type: 3}
   stateLoopSource: {fileID: 0}
   huntLoopClip: {fileID: 0}
-  chaseLoopClip: {fileID: 0}
+  chaseLoopClip: {fileID: 8300000, guid: 6e4cbbc174981cd43bdae73b64c4439a, type: 3}
   searchLoopClip: {fileID: 0}
   animator: {fileID: 6008282970426361002}
   speedParam: Speed
@@ -224194,8 +224194,8 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 6
   m_Range: 15
-  m_SpotAngle: 100.62616
-  m_InnerSpotAngle: 61.79042
+  m_SpotAngle: 64.999954
+  m_InnerSpotAngle: 26.164207
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
     m_Type: 1
@@ -226023,6 +226023,7 @@ GameObject:
   - component: {fileID: 301701860455244400}
   - component: {fileID: 8632656227942146879}
   - component: {fileID: 1967231145905489681}
+  - component: {fileID: 8632656227942146880}
   m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
@@ -227949,6 +227950,7 @@ GameObject:
   - component: {fileID: 3403042347257051399}
   - component: {fileID: 668752721556225015}
   - component: {fileID: 1317708367375148323}
+  - component: {fileID: 8974963239748155713}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -231993,12 +231995,12 @@ Light:
   m_GameObject: {fileID: 6709574177353731156}
   m_Enabled: 1
   serializedVersion: 12
-  m_Type: 2
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 20
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 69.101944
+  m_InnerSpotAngle: 40.049652
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
     m_Type: 0
@@ -232049,6 +232051,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &8632656227942146880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709574177353731156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3990c75d1e177bf48b345d73f6b5c8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  minIntensity: 0.01
+  maxIntensity: 30
+  flickerSpeed: 16
+  randomOffset: 50
 --- !u!1 &8639390915992984581
 GameObject:
   m_ObjectHideFlags: 0
@@ -233906,6 +233924,29 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!164 &8974963239748155713
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386376279136714526}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -454
+  m_DecayTime: 0.4
+  m_DecayHFRatio: 0.83
+  m_ReflectionsLevel: -1646
+  m_ReverbLevel: 53
+  m_ReverbDelay: 0.003
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 3
 --- !u!4 &8977379857908250488
 Transform:
   m_ObjectHideFlags: 0
