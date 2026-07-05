@@ -138003,7 +138003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1067518451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -200700,7 +200700,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f161a5e1616959844801888c64ea318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScareManager
-  scareObjects: []
+  scareObjects:
+  - {fileID: 623190695}
+  - {fileID: 1745147621}
+  - {fileID: 1469935829}
+  - {fileID: 938038255}
+  - {fileID: 596192195}
+  - {fileID: 1871381470}
+  - {fileID: 7821622413202325967}
+  - {fileID: 4936809656540830029}
+  - {fileID: 2085204280}
+  - {fileID: 4465243266626019975}
+  - {fileID: 1088121841778901285}
+  - {fileID: 620472691693153231}
+  - {fileID: 3009114584164078644}
+  - {fileID: 1012714894}
+  - {fileID: 1000453872}
+  - {fileID: 1634369436}
+  - {fileID: 1751817104}
+  - {fileID: 1318518935}
+  - {fileID: 872365288}
+  - {fileID: 1088968502}
+  - {fileID: 306917826}
+  - {fileID: 384270855}
+  - {fileID: 5118387810088423145}
+  - {fileID: 2075523250}
+  - {fileID: 934422675}
+  - {fileID: 1738572600}
+  - {fileID: 774887284}
+  - {fileID: 1130057632}
+  - {fileID: 999347797}
+  - {fileID: 1177169982}
+  - {fileID: 111971387}
+  - {fileID: 855302313}
+  - {fileID: 260296394}
+  - {fileID: 1216749683}
 --- !u!1 &1924256342
 GameObject:
   m_ObjectHideFlags: 0
