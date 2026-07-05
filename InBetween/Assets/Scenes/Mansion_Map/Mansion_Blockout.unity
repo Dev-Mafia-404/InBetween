@@ -2010,17 +2010,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MainMenu '
+  m_text: Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86bd23dbdbdfbe246bff36b830d57819, type: 2}
+  m_sharedMaterial: {fileID: -8266526474432131333, guid: 86bd23dbdbdfbe246bff36b830d57819, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -13240,7 +13240,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 20.04829, y: 21.803492, z: 12.371357}
   m_Center: {x: -0.32116032, y: 10.916863, z: -1.0268022}
@@ -13368,14 +13368,14 @@ RectTransform:
   m_Children:
   - {fileID: 633596294}
   - {fileID: 1516483877}
-  - {fileID: 1260155829}
   - {fileID: 1875987208}
+  - {fileID: 1260155829}
   m_Father: {fileID: 1214620823}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 189.0203, y: 177.77704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225095516
 MonoBehaviour:
@@ -47820,14 +47820,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
+  - text: '<color=red> Jay:</color> Yeah... yeah... You must be one of my dad''s
+      friends.
+
+      Need a favor? A bribe?
+
+      That''s usually how things worked
+      around here.'
     audioClip: {fileID: 0}
-    displayTime: 0
-    useChoice: 0
-    choice1Label: 
-    choice1Response: 
+    displayTime: 7
+    useChoice: 1
+    choice1Label: "I am not your father\u2019s friend. My name is Garv Tomar. I am
+      a Paranormal Investigator"
+    choice1Response: So the whole world knows what happened to us now, huh?
     choice1ResponseAudio: {fileID: 0}
-    choice1ResponseDisplayTime: 0
+    choice1ResponseDisplayTime: 6
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red> Jay:</color> You wanna know why I''m still here?
+
+      Because
+      my idiot brother couldn''t handle losing one stupid pool game.'
+    audioClip: {fileID: 0}
+    displayTime: 7
+    useChoice: 1
+    choice1Label: I ma find it for you.
+    choice1Response: Well Good Luck Mate
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 4
     choice2Label: 
     choice2Response: 
     choice2ResponseAudio: {fileID: 0}
@@ -49156,8 +49178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Did u fine my teddy?
-    audioClip: {fileID: 0}
+  - text: <color=red> Reshma:</color> Did u find my teddy?
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
     displayTime: 3
     useChoice: 0
     choice1Label: 
@@ -49168,8 +49190,8 @@ MonoBehaviour:
     choice2Response: 
     choice2ResponseAudio: {fileID: 0}
     choice2ResponseDisplayTime: 0
-  - text: Where is it?
-    audioClip: {fileID: 0}
+  - text: <color=red> Reshma:</color> Where is Teddy?
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
     displayTime: 3
     useChoice: 0
     choice1Label: 
@@ -49182,7 +49204,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -49203,7 +49225,7 @@ MonoBehaviour:
   playerController: {fileID: 6324346302894396822}
   useStartDelay: 0
   startDelaySeconds: 0
-  randomizeSingleEntry: 0
+  randomizeSingleEntry: 1
   objectsToActivate: []
   onStarted:
     m_PersistentCalls:
@@ -54293,9 +54315,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Rihan:</color> The cameras are working fine now?
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 6
+    useChoice: 1
+    choice1Label: Seems Like Yes
+    choice1Response: Perfect! Thanks man
+    choice1ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice1ResponseDisplayTime: 4
+    choice2Label: Yup. They are
+    choice2Response: Good to hear. Thanks!
+    choice2ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red> Rihan:</color> You know, I always wanted to live in peace,
+      but this family never desired it. '
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 6
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -54307,9 +54342,9 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
-  choice1Text: {fileID: 0}
-  choice2Text: {fileID: 0}
+  audioSource: {fileID: 1397415507}
+  choice1Text: {fileID: 509351403}
+  choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
   unselectedColor: {r: 0.55, g: 0.55, b: 0.55, a: 1}
   wrapChoiceScroll: 1
@@ -54317,7 +54352,7 @@ MonoBehaviour:
   choiceDownKey: 274
   choiceConfirmKey: 32
   confirmWithLeftClick: 1
-  choiceToggleSFX: {fileID: 0}
+  choiceToggleSFX: {fileID: 8300000, guid: edb2c8e2ea64c8c46ada3dce217413c0, type: 3}
   playerTag: Player
   isLoopable: 0
   waitForFullAudio: 1
@@ -66208,9 +66243,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Rihan:</color> Any luck with the cameras?
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rihan:</color> Take your time.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -66222,7 +66269,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -68726,8 +68773,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -553.2876, y: -627.19446}
-  m_SizeDelta: {x: -1235.573, y: -1412.1887}
+  m_AnchoredPosition: {x: -213.12, y: -572.69995}
+  m_SizeDelta: {x: -576.24, y: -1412.1887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509351403
 MonoBehaviour:
@@ -68751,8 +68798,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Choice 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: daade3e52f1ec894a9c111a1ac63b716, type: 2}
+  m_sharedMaterial: {fileID: -4842326878162383827, guid: daade3e52f1ec894a9c111a1ac63b716, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -68776,8 +68823,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -75919,8 +75966,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 299.2, y: -32.345}
-  m_SizeDelta: {x: 578.4, y: 44.69}
+  m_AnchoredPosition: {x: 168.505, y: -42.505}
+  m_SizeDelta: {x: 317.01, y: 65.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612625770
 MonoBehaviour:
@@ -75942,10 +75989,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is a notification Sample '
+  m_text: This is a notification Sample
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
+  m_sharedMaterial: {fileID: -1317782201900489571, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -75969,13 +76016,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -76691,11 +76738,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 225095515}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 3, y: -146.75446}
-  m_SizeDelta: {x: 753.2992, y: 178.2325}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 736.6, y: 305.5427}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633596295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76720,15 +76767,15 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
+  m_sharedMaterial: {fileID: -1317782201900489571, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -76745,15 +76792,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 375.93
+  m_fontSizeBase: 375.93
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -77304,9 +77351,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
+  - text: <color=red> Jay:</color>Gave Up? A lot of people did on me.
     audioClip: {fileID: 0}
     displayTime: 0
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Jay:</color>Waiting for the ball. Thanks though
+    audioClip: {fileID: 0}
+    displayTime: 3
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -77339,7 +77398,7 @@ MonoBehaviour:
   playerController: {fileID: 6324346302894396822}
   useStartDelay: 0
   startDelaySeconds: 0
-  randomizeSingleEntry: 0
+  randomizeSingleEntry: 1
   objectsToActivate: []
   onStarted:
     m_PersistentCalls:
@@ -81086,7 +81145,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 62, y: 188}
-  m_SizeDelta: {x: 598.4, y: 64.69}
+  m_SizeDelta: {x: 337.01, y: 85.01}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &718834975
 MonoBehaviour:
@@ -95370,7 +95429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38.80005, y: -332}
+  m_AnchoredPosition: {x: -38.80005, y: -39.50403}
   m_SizeDelta: {x: 963.2372, y: 261.9919}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &905521762
@@ -95420,8 +95479,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -130418,9 +130477,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Jay:</color> Thanks man. I never liked this family.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Jay:</color> Never liked my Dad, my uncle <color=#ff8929>Vijay</color>.
+      Theyalways had fights...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Jay:</color> Really bad fights.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 2
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Jay:</color>I knew that one day, this house, this family will
+      shatter into peaces for their own greed.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 6
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red>EVERYONE IS CORRUPTED
+
+      EVERYONE IS CORRUPTED
+
+      EVERYONE
+      IS CORRUPTED </color>'
+    audioClip: {fileID: 8300000, guid: 085061e80514cf642b860f9750efc64c, type: 3}
+    displayTime: 6
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -137851,15 +137965,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Retry
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86bd23dbdbdfbe246bff36b830d57819, type: 2}
+  m_sharedMaterial: {fileID: -8266526474432131333, guid: 86bd23dbdbdfbe246bff36b830d57819, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -137882,7 +137996,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -138241,7 +138355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1067518451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -138294,7 +138408,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 1920, y: 1440}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -150718,7 +150832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1214620823
 RectTransform:
   m_ObjectHideFlags: 0
@@ -152796,7 +152910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1260155829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -161402,6 +161516,135 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -3910990755373119420, guid: e01893ed8b2b9074f8cf5eec2769d52e, type: 3}
   m_PrefabInstance: {fileID: 211641797}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1397415505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1397415506}
+  - component: {fileID: 1397415507}
+  m_Layer: 0
+  m_Name: Dialogue Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1397415506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397415505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 346.18948, y: 263.2093, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1397415507
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397415505}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!43 &1400269164
 Mesh:
   m_ObjectHideFlags: 0
@@ -166149,7 +166392,7 @@ GameObject:
   - component: {fileID: 1448445941}
   - component: {fileID: 1448445940}
   m_Layer: 5
-  m_Name: 'current Ch '
+  m_Name: current Chapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166169,11 +166412,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 327759624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38.80005, y: -47}
-  m_SizeDelta: {x: 963.2372, y: 261.9919}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -55, y: 24}
+  m_SizeDelta: {x: 963.2372, y: 97.48755}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1448445940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166194,7 +166437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Chapter 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
   m_sharedMaterial: {fileID: -1317782201900489571, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
@@ -166221,8 +166464,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -174533,11 +174776,11 @@ RectTransform:
   - {fileID: 1057970354}
   m_Father: {fileID: 225095515}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -185, y: 559}
   m_SizeDelta: {x: 350, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1516483878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174559,9 +174802,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.8962264, g: 0.10568706, b: 0.10568706, a: 1}
+    m_HighlightedColor: {r: 0.8584906, g: 0.16602883, b: 0.16602883, a: 1}
+    m_PressedColor: {r: 0.7264151, g: 0.07195621, b: 0.07195621, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -174595,7 +174838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -196831,11 +197074,11 @@ RectTransform:
   - {fileID: 34524468}
   m_Father: {fileID: 225095515}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: -290}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 191, y: 559}
   m_SizeDelta: {x: 350, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1875987209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196893,7 +197136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -205241,8 +205484,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -553.2876, y: -664.4943}
-  m_SizeDelta: {x: -1235.573, y: -1412.1887}
+  m_AnchoredPosition: {x: -213.12085, y: -613.9999}
+  m_SizeDelta: {x: -576.2417, y: -1412.1887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010472012
 MonoBehaviour:
@@ -205266,8 +205509,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Choice 2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f91e76bf274514f45966b1502e4d7549, type: 2}
+  m_sharedMaterial: {fileID: 3603985153067992110, guid: f91e76bf274514f45966b1502e4d7549, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -205291,8 +205534,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -208778,9 +209021,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
+  - text: <color=red> Rihan:</color> It's been so long... I never thought I'd speak
+      to someone who's still alive.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 6
+    useChoice: 0
+    choice1Label: Who are you?
+    choice1Response: Rihan Bandhan.
+    choice1ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice1ResponseDisplayTime: 2
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: 
     audioClip: {fileID: 0}
     displayTime: 0
+    useChoice: 1
+    choice1Label: What happened here?
+    choice1Response: <color=red> Rihan:</color> I wish I knew. Could you do a help
+      for me?
+    choice1ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice1ResponseDisplayTime: 4
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rihan:</color> But there is something you can help me with
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rihan:</color> A few days before everything happened, the CCTV
+      cameras started acting strange.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 6
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rihan:</color> Then one day the whole system went dead.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rihan:</color> Can you get them working again? I guess you
+      will need a Fuse, since that was missing.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 6
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -210636,7 +210943,7 @@ RectTransform:
   m_GameObject: {fileID: 2101991113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0375, y: 1.0625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1067518451}
@@ -211983,23 +212290,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Oh You found my teddy Thankyou so much
-    audioClip: {fileID: 0}
+  - text: <color=red> Reshma:</color> You found him! Thank you so much, Mister!
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
     displayTime: 3
-    useChoice: 0
-    choice1Label: 
-    choice1Response: 
-    choice1ResponseAudio: {fileID: 0}
-    choice1ResponseDisplayTime: 0
+    useChoice: 1
+    choice1Label: Looks like he's happy to be back with you.
+    choice1Response: '<color=red>DON''T LET IT SEE YOU.
+
+      DON''T LET IT SEE
+      YOU.
+
+      DON''T LET IT SEE YOU. </color>'
+    choice1ResponseAudio: {fileID: 8300000, guid: 085061e80514cf642b860f9750efc64c, type: 3}
+    choice1ResponseDisplayTime: 6
     choice2Label: 
     choice2Response: 
     choice2ResponseAudio: {fileID: 0}
-    choice2ResponseDisplayTime: 0
+    choice2ResponseDisplayTime: 3
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
-  choice1Text: {fileID: 0}
-  choice2Text: {fileID: 0}
+  audioSource: {fileID: 1397415507}
+  choice1Text: {fileID: 509351403}
+  choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
   unselectedColor: {r: 0.55, g: 0.55, b: 0.55, a: 1}
   wrapChoiceScroll: 1
@@ -212007,7 +212319,7 @@ MonoBehaviour:
   choiceDownKey: 274
   choiceConfirmKey: 32
   confirmWithLeftClick: 1
-  choiceToggleSFX: {fileID: 0}
+  choiceToggleSFX: {fileID: 8300000, guid: af2941e2b68df394dbf295c20259155e, type: 3}
   playerTag: Player
   isLoopable: 0
   waitForFullAudio: 1
@@ -217544,20 +217856,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Mister Have You Seen My Teddy?
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Reshma:</color> Mister... Have you seen my Teddy?
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Reshma:</color> I lost it somewhere... and it's so dark...
+      I'm too scared to go looking for it.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
     useChoice: 1
     choice1Label: 1. Why Do You need it so Much?
-    choice1Response: "Cause its precious too me, \nhelp me find him Please!!!!"
-    choice1ResponseAudio: {fileID: 0}
+    choice1Response: <color=red> Reshma:</color> It was my only best friend...
+    choice1ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
     choice1ResponseDisplayTime: 3
-    choice2Label: 2.Dont worry i'll help you find him
-    choice2Response: Thakyou so much Mister
-    choice2ResponseAudio: {fileID: 0}
+    choice2Label: 2. Don't worry. I'll help you find him.
+    choice2Response: '<color=red> Reshma:</color> Thank You So Much Mister..
+
+'
+    choice2ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
     choice2ResponseDisplayTime: 3
-  - text: go and find it for me plz Best of luck
-    audioClip: {fileID: 0}
+  - text: <color=red> Reshma:</color> I hope you can find it for me.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
     displayTime: 3
     useChoice: 0
     choice1Label: 
@@ -217570,7 +217897,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 624142571}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 509351403}
   choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -217580,7 +217907,7 @@ MonoBehaviour:
   choiceDownKey: 274
   choiceConfirmKey: 32
   confirmWithLeftClick: 1
-  choiceToggleSFX: {fileID: 0}
+  choiceToggleSFX: {fileID: 8300000, guid: af2941e2b68df394dbf295c20259155e, type: 3}
   playerTag: Player
   isLoopable: 0
   waitForFullAudio: 1
@@ -242628,7 +242955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7403187003029341692
 GameObject:
   m_ObjectHideFlags: 0
@@ -247728,7 +248055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8828560008791902282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249110,6 +249437,7 @@ SceneRoots:
   - {fileID: 437539741}
   - {fileID: 4655573643466177645}
   - {fileID: 6828288600558988816}
+  - {fileID: 1397415506}
   - {fileID: 448313890}
   - {fileID: 1558610805}
   - {fileID: 1589033518}
