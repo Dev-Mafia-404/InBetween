@@ -248559,7 +248559,6 @@ GameObject:
   - component: {fileID: 1773150706795995652}
   - component: {fileID: 6365945718386610030}
   - component: {fileID: 287325484809216243}
-  - component: {fileID: 8828560008791902282}
   m_Layer: 0
   m_Name: Enemy Manager
   m_TagString: Untagged
@@ -248567,33 +248566,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8828560008791902282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8828560008791902281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 208cd5a179ad2494aa309e7bdb3bc988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StartEnemy
-  onEnemyStarted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6365945718386610030}
-        m_TargetAssemblyTypeName: EnemyPhaseManager, Assembly-CSharp
-        m_MethodName: ReportSoulResolved
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!223 &8829745749822972772
 Canvas:
   m_ObjectHideFlags: 0
