@@ -9,6 +9,6 @@ public class ResolutionManager : MonoBehaviour
 
     private void Awake()
     {
-        Screen.SetResolution(width, height, fullScreenMode);
+        Screen.SetResolution(width, height, fullScreenMode);    
     }
 }
