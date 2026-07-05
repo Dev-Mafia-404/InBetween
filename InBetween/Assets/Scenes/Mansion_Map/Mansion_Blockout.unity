@@ -2790,11 +2790,11 @@ RectTransform:
   - {fileID: 1259445400}
   m_Father: {fileID: 852545281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 108, y: 261}
   m_SizeDelta: {x: 350, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &57257258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9066,8 +9066,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'MainMenu '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
+  m_sharedMaterial: {fileID: -1317782201900489571, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9091,15 +9091,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 85
+  m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -12842,11 +12842,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 852545281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 3, y: -146.75446}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 103, y: -142}
   m_SizeDelta: {x: 753.2992, y: 178.2325}
-  m_Pivot: {x: 0.5, y: 1}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &218943560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12869,8 +12869,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Paused
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
+  m_sharedMaterial: {fileID: -1317782201900489571, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12894,14 +12894,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 350
+  m_fontSizeBase: 350
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_fontStyle: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -46830,22 +46830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01bc8f3176176e41adc8e29c616147d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
-  dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
-    useChoice: 0
-    choice1Label: 
-    choice1Response: 
-    choice1ResponseAudio: {fileID: 0}
-    choice1ResponseDisplayTime: 0
-    choice2Label: 
-    choice2Response: 
-    choice2ResponseAudio: {fileID: 0}
-    choice2ResponseDisplayTime: 0
+  dialogueEntries: []
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -54326,10 +54314,22 @@ MonoBehaviour:
     choice2Label: Yup. They are
     choice2Response: Good to hear. Thanks!
     choice2ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
-    choice2ResponseDisplayTime: 0
+    choice2ResponseDisplayTime: 3
   - text: '<color=red> Rihan:</color> You know, I always wanted to live in peace,
       but this family never desired it. '
     audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 6
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red> WHATEVER IS IN THE MANSION, WILL KILL EVERYONE</color> '
+    audioClip: {fileID: 8300000, guid: 085061e80514cf642b860f9750efc64c, type: 3}
     displayTime: 6
     useChoice: 0
     choice1Label: 
@@ -76538,9 +76538,131 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> You know...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 2
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> People loved my husband.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 2.5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> Digvijay Bandhan. A respected businessman.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> A generous soul.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 2.5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> At least that's what everyone believed.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> He built an empire out of fear.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3.5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> Bandhan Security Foundation wasn't just
+      selling safety...It was selling paranoia.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> One last dinner...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> That's all I wanted.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red> Rekha Bandhan:</color> Nothing fancy. Just the family together. '
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 1
+    choice1Label: 1. What can I do for you?
+    choice1Response: <color=red> Rekha Bandhan:</color> Can you find me my Cookbook?
+    choice1ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice1ResponseDisplayTime: 4
+    choice2Label: 2. I can help
+    choice2Response: <color=red> Rekha Bandhan:</color> Thank you dear. I need my
+      Cookbook.
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 4
+  - text: <color=red> Rekha Bandhan:</color> I will wait for you to return.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -76552,7 +76674,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 624142571}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 509351403}
   choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -78765,7 +78887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &675490881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79350,22 +79472,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01bc8f3176176e41adc8e29c616147d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
-  dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
-    useChoice: 0
-    choice1Label: 
-    choice1Response: 
-    choice1ResponseAudio: {fileID: 0}
-    choice1ResponseDisplayTime: 0
-    choice2Label: 
-    choice2Response: 
-    choice2ResponseAudio: {fileID: 0}
-    choice2ResponseDisplayTime: 0
+  dialogueEntries: []
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -81947,9 +82057,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: '(Music starts.)
+
+      <color=red> Sonali Bandhan:</color> Vijay wanted
+      to leave this mansion...'
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Sonali Bandhan:</color> But Father would never allow it.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -81961,7 +82086,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -95429,7 +95554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38.80005, y: -39.50403}
+  m_AnchoredPosition: {x: -38.80005, y: -39.503906}
   m_SizeDelta: {x: 963.2372, y: 261.9919}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &905521762
@@ -136480,9 +136605,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Ashu Bandhan:</color> Oh! You found it! Thank you mister
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red> Ashu Bandhan:</color> *Cries* I really miss the life I used
+      to have. Last time I remember was when Ajay and Vijay were arguing upstairs. '
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 7
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red> Ashu Bandhan:</color> But there was another voice. '
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red> Ashu Bandhan:</color> One that <color=red> didn''t belong
+      to either of them.</color> '
+    audioClip: {fileID: 8300000, guid: 085061e80514cf642b860f9750efc64c, type: 3}
+    displayTime: 4
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -136494,7 +136657,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -141515,9 +141678,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> I was hiding this not from family
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> But from father
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 2.5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> I was trying to save everyone.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3.5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> But I became a Villian in my own house.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3.5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> I wish, If I ever could get forgiveness
+      from my family and...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> Abhay.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -141529,7 +141753,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -143141,9 +143365,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> Hello Son
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -143155,7 +143379,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -143275,11 +143499,11 @@ RectTransform:
   - {fileID: 1939844742}
   m_Father: {fileID: 852545281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: -144}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 108, y: 126}
   m_SizeDelta: {x: 350, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1108323740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149207,22 +149431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01bc8f3176176e41adc8e29c616147d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
-  dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
-    useChoice: 0
-    choice1Label: 
-    choice1Response: 
-    choice1ResponseAudio: {fileID: 0}
-    choice1ResponseDisplayTime: 0
-    choice2Label: 
-    choice2Response: 
-    choice2ResponseAudio: {fileID: 0}
-    choice2ResponseDisplayTime: 0
+  dialogueEntries: []
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -152814,8 +153026,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Resume '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
+  m_sharedMaterial: {fileID: -1317782201900489571, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -152839,15 +153051,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 85
+  m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -164575,9 +164787,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> My recipe book...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> Thank you.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> Everyone smiled that night...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> ...except Abhay.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Rekha Bandhan:</color> He barely touched his food. Like if
+      something was troubling him
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -164589,7 +164850,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -165106,9 +165367,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Sonali Bandhan:</color> I miss my husband Vijay.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: I miss everything. This music, Vijay, Reshma, everyone
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -165120,7 +165393,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -173123,11 +173396,11 @@ RectTransform:
   - {fileID: 148909811}
   m_Father: {fileID: 852545281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: -290}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 108, y: -14}
   m_SizeDelta: {x: 350, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1504845911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177463,9 +177736,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
+  - text: <color=red> Abhay Bandhan:</color> Digvijay Bandhan, My father. The arrogant
+      corrupted peace of crap.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red> Abhay Bandhan:</color> He built this house with the struggles
+      of innocents and the money of compelled. '
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Abhay Bandhan:</color> The walls are not just red.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
     displayTime: 3
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Abhay Bandhan:</color> They are red from the blood that was
+      shed.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: '<color=red>LEAVE, GARV.
+
+      OUR FATHER SOLD HIS SOUL.
+
+      AND THIS
+      HOUSE HASN''T STOPPED CORRUPTING PEOPLE SINCE. </color> '
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 5
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -177477,7 +177806,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 624142571}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 509351403}
   choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -178645,7 +178974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937288462750310090, guid: 73c17ef7675303b40933bbb5b4dc85be, type: 3}
       propertyPath: m_Size.x
-      value: 2.0649858
+      value: 1.3398086
       objectReference: {fileID: 0}
     - target: {fileID: 3937288462750310090, guid: 73c17ef7675303b40933bbb5b4dc85be, type: 3}
       propertyPath: m_Size.y
@@ -178653,11 +178982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937288462750310090, guid: 73c17ef7675303b40933bbb5b4dc85be, type: 3}
       propertyPath: m_Size.z
-      value: 2.8040783
+      value: 1.606844
       objectReference: {fileID: 0}
     - target: {fileID: 3937288462750310090, guid: 73c17ef7675303b40933bbb5b4dc85be, type: 3}
       propertyPath: m_Center.x
-      value: -0.31816998
+      value: -0.0035306215
       objectReference: {fileID: 0}
     - target: {fileID: 3937288462750310090, guid: 73c17ef7675303b40933bbb5b4dc85be, type: 3}
       propertyPath: m_Center.y
@@ -178665,7 +178994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937288462750310090, guid: 73c17ef7675303b40933bbb5b4dc85be, type: 3}
       propertyPath: m_Center.z
-      value: 1.551601
+      value: 0.95298386
       objectReference: {fileID: 0}
     - target: {fileID: 4168701887172276657, guid: 73c17ef7675303b40933bbb5b4dc85be, type: 3}
       propertyPath: m_IsActive
@@ -183856,9 +184185,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Sonali Bandhan:</color> Vijay loved this gramophone...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: The music made this place feel alive.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -183870,7 +184211,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 624142571}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 509351403}
   choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -200994,9 +201335,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Ashu Bandhan:</color> I miss my past life.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Ashu Bandhan:</color> I wonder where the brush is.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -201008,7 +201361,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -201916,8 +202269,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
+  m_sharedMaterial: {fileID: -1317782201900489571, guid: bd5ba9d3eb2273c42b196459c3408f67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -201941,15 +202294,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 85
+  m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -203540,9 +203893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Ashu Bandhan:</color> I never finished my painting...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -203552,9 +203905,46 @@ MonoBehaviour:
     choice2Response: 
     choice2ResponseAudio: {fileID: 0}
     choice2ResponseDisplayTime: 0
+  - text: <color=red> Ashu Bandhan:</color> My hands... stopped listening to me.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Ashu Bandhan:</color>The Brush, which was like my life line.
+      I lost it
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 1
+    choice1Label: 1. I can find it
+    choice1Response: <color=red> Ashu Bandhan:</color> Really? Thank you mister!
+    choice1ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice1ResponseDisplayTime: 3
+    choice2Label: 2. Where was it last time?
+    choice2Response: <color=red> Ashu Bandhan:</color>I don't remember, to be honest.
+    choice2ResponseAudio: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    choice2ResponseDisplayTime: 4
+  - text: <color=red> Ashu Bandhan:</color> I hope you find it.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 4
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 4
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 624142571}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 509351403}
   choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -210004,9 +210394,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
   dialogueEntries:
-  - text: Hii
-    audioClip: {fileID: 0}
-    displayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> Abhay...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 2
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> I never got to tell him the truth.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3.5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> I hid these plans...
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 2.5
+    useChoice: 0
+    choice1Label: 
+    choice1Response: 
+    choice1ResponseAudio: {fileID: 0}
+    choice1ResponseDisplayTime: 0
+    choice2Label: 
+    choice2Response: 
+    choice2ResponseAudio: {fileID: 0}
+    choice2ResponseDisplayTime: 0
+  - text: <color=red> Vijay Bandhan:</color> Because I had to.
+    audioClip: {fileID: 8300000, guid: d9f2d175a3cb9bc4388518e1accda36a, type: 3}
+    displayTime: 3
     useChoice: 0
     choice1Label: 
     choice1Response: 
@@ -210018,7 +210444,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 624142571}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 509351403}
   choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -222599,7 +223025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2548595389145374937
 GameObject:
   m_ObjectHideFlags: 0
