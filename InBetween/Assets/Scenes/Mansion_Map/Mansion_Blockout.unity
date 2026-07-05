@@ -47665,7 +47665,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 624142571}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 509351403}
   choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -77046,7 +77046,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -130156,7 +130156,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 2677984509723697200}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 0}
   choice2Text: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -209522,7 +209522,7 @@ MonoBehaviour:
     choice2ResponseDisplayTime: 0
   dialogueText: {fileID: 612625770}
   popupRoot: {fileID: 718834973}
-  audioSource: {fileID: 624142571}
+  audioSource: {fileID: 1397415507}
   choice1Text: {fileID: 509351403}
   choice2Text: {fileID: 2010472012}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -241668,7 +241668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6672328414249530595
 Transform:
   m_ObjectHideFlags: 0
