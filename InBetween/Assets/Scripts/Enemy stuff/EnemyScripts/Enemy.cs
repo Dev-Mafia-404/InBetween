@@ -319,6 +319,11 @@ public class Enemy : MonoBehaviour
         cooldownTimeRemaining = Mathf.Max(duration, remainingFloor);
         SetState(State.Cooldown);
         SetStateLoop(null);
+
+        // Stop all audio when entering cooldown
+        if (voiceAudioSource != null) voiceAudioSource.Stop();
+        if (footstepAudioSource != null) footstepAudioSource.Stop();
+
         Log($"Cooldown started: {cooldownTimeRemaining:F1}s (phase={(phaseManager != null ? phaseManager.CurrentPhase.ToString() : "none")}).");
         OnCooldownStarted?.Invoke();
     }
@@ -707,6 +712,10 @@ public class Enemy : MonoBehaviour
         pendingStartCooldown = startCooldownAfter;
         ClearWatching();
         SetStateLoop(null);
+
+        // Stop all audio when beginning withdrawal
+        if (voiceAudioSource != null) voiceAudioSource.Stop();
+        if (footstepAudioSource != null) footstepAudioSource.Stop();
 
         // walkAway = drift off instead of freezing in place (so it doesn't look stuck at a wall
         // while the fade plays). Used when it gives up the search. Torch/catch stand still so their

@@ -15,8 +15,8 @@ MonoBehaviour:
   ghostTypeName: Wisp
   minFrequency: 200
   maxFrequency: 400
-  greenThreshold: 5
-  yellowThreshold: 10
+  greenThreshold: 20
+  yellowThreshold: 25
   targetJitterSpeed: 6
   targetHaywireIntensity: 0.8
   waveBaseFrequency: 3
@@ -25,7 +25,7 @@ MonoBehaviour:
   useTimer: 0
   timerSeconds: 10
   eventFireDelay: 0
-  maxDetectionRange: 15
-  closeRangeDistance: 4
+  maxDetectionRange: 10
+  closeRangeDistance: 3
   minVolume: 1
   maxVolume: 1

@@ -1,67 +1,119 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+using UnityEngine.Video;
 
 public class MainMenuManager : MonoBehaviour
 {
-
-    [Header("Scene Index")]
-    [SerializeField] private int Sceneindex = 0;
-
     [Header("Buttons")]
-    [SerializeField] private Button PlayButton;
-    [SerializeField] private Button QuitButton;
-    [SerializeField] private Button SettingsButton;
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button settingsButton;
+    [SerializeField] private Button quitButton;
 
+    [Header("Scene")]
+    [SerializeField] private int gameplaySceneIndex = 1;
 
-    void Awake()
+    [Header("Loading Video")]
+    [SerializeField] private RawImage loadingScreen;
+    [SerializeField] private VideoPlayer videoPlayer;
+
+    [Header("Fade (Optional)")]
+    [SerializeField] private CanvasGroup fadeCanvas;
+    [SerializeField] private float fadeDuration = 0.35f;
+
+    private bool videoFinished;
+    private AsyncOperation loadingOperation;
+
+    private void Awake()
     {
-        // Hook up button click listeners
-        if (PlayButton != null)
-            PlayButton.onClick.AddListener(LoadScene);
+        if (playButton != null)
+            playButton.onClick.AddListener(PlayGame);
 
-        if (QuitButton != null)
-            QuitButton.onClick.AddListener(Quit);
+        if (settingsButton != null)
+            settingsButton.onClick.AddListener(Settings);
 
-        if (SettingsButton != null)
-            SettingsButton.onClick.AddListener(Settings);
-       
+        if (quitButton != null)
+            quitButton.onClick.AddListener(QuitGame);
+
+        if (loadingScreen != null)
+            loadingScreen.gameObject.SetActive(false);
+
+        if (fadeCanvas != null)
+            fadeCanvas.alpha = 0f;
     }
 
-   public void LoadScene()
+    private void PlayGame()
     {
-        SceneManager.LoadSceneAsync(Sceneindex);
+        playButton.interactable = false;
+        if (settingsButton != null) settingsButton.interactable = false;
+        if (quitButton != null) quitButton.interactable = false;
+
+        StartCoroutine(PlayIntroAndLoad());
     }
 
-    void Settings() 
+    private IEnumerator PlayIntroAndLoad()
     {
-        Debug.Log("opening Settings");
+        videoFinished = false;
+
+        loadingScreen.gameObject.SetActive(true);
+
+        videoPlayer.Stop();
+        videoPlayer.frame = 0;
+        videoPlayer.loopPointReached += OnVideoFinished;
+        videoPlayer.Play();
+
+        loadingOperation = SceneManager.LoadSceneAsync(gameplaySceneIndex);
+        loadingOperation.allowSceneActivation = false;
+
+        while (!videoFinished || loadingOperation.progress < 0.9f)
+            yield return null;
+
+        if (fadeCanvas != null)
+        {
+            float t = 0;
+
+            while (t < fadeDuration)
+            {
+                t += Time.deltaTime;
+                fadeCanvas.alpha = Mathf.Lerp(0, 1, t / fadeDuration);
+                yield return null;
+            }
+
+            fadeCanvas.alpha = 1;
+        }
+
+        loadingOperation.allowSceneActivation = true;
     }
 
-     public  void Quit()
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        videoFinished = true;
+        videoPlayer.loopPointReached -= OnVideoFinished;
+    }
+
+    private void Settings()
+    {
+        Debug.Log("Settings");
+    }
+
+    private void QuitGame()
     {
         Application.Quit();
-
-#if UNITY_EDITOR
-        // Exit play mode in editor
-        EditorApplication.isPlaying = false;
-#endif
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
-        // Clean up listeners to avoid duplicate registrations
-        if (PlayButton != null)
-            PlayButton.onClick.RemoveListener(LoadScene);
+        if (playButton != null)
+            playButton.onClick.RemoveListener(PlayGame);
 
-        if (QuitButton != null)
-            QuitButton.onClick.RemoveListener(Quit);
+        if (settingsButton != null)
+            settingsButton.onClick.RemoveListener(Settings);
 
-        if (SettingsButton != null)
-            SettingsButton.onClick.RemoveListener(Settings);
+        if (quitButton != null)
+            quitButton.onClick.RemoveListener(QuitGame);
+
+        if (videoPlayer != null)
+            videoPlayer.loopPointReached -= OnVideoFinished;
     }
 }

@@ -23,7 +23,7 @@ public class PauseMenuManager : MonoBehaviour
             ResumeButton.onClick.AddListener(Resume);
 
         if (MenuButton != null)
-            MenuButton.onClick.AddListener(LoadScene);
+            MenuButton.onClick.AddListener(() => LoadScene(Sceneindex));
 
         if (SettingsButton != null)
             SettingsButton.onClick.AddListener(Settings);
@@ -62,10 +62,10 @@ public class PauseMenuManager : MonoBehaviour
         isopen = true;
     }
 
-    public void LoadScene()
+    public void LoadScene(int sceneIndex)
     {
         Time.timeScale = 1; // Resume time before loading scene
-        SceneManager.LoadSceneAsync(Sceneindex);
+        SceneManager.LoadSceneAsync(sceneIndex);
     }
 
     public void Settings()
@@ -80,7 +80,7 @@ public class PauseMenuManager : MonoBehaviour
             ResumeButton.onClick.RemoveListener(Resume);
 
         if (MenuButton != null)
-            MenuButton.onClick.RemoveListener(LoadScene);
+            MenuButton.onClick.RemoveListener(() => LoadScene(Sceneindex));
 
         if (SettingsButton != null)
             SettingsButton.onClick.RemoveListener(Settings);

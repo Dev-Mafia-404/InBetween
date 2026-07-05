@@ -26,6 +26,6 @@ MonoBehaviour:
   timerSeconds: 10
   eventFireDelay: 0
   maxDetectionRange: 10
-  closeRangeDistance: 4
+  closeRangeDistance: 3
   minVolume: 1
   maxVolume: 1
