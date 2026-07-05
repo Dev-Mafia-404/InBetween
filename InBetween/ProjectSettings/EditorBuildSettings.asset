@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayGround.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Mansion_Map/Mansion_Blockout.unity
-    guid: 6caa5a3f39c8eb449b01fa78cfc7911e
-  - enabled: 1
     path: Assets/Scenes/MainMenu2.unity
     guid: d6024dcd98abe4e48bad9b4339245af9
+  - enabled: 1
+    path: Assets/Scenes/Mansion_Map/Mansion_Blockout.unity
+    guid: 6caa5a3f39c8eb449b01fa78cfc7911e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerHide : Interactable
 {
@@ -34,8 +35,11 @@ public class PlayerHide : Interactable
 
     private bool playerInside;
     private bool animating;
+    private Outline outline;
 
-    private void Awake()
+    public Transform Transform => transform;
+ 
+    private void Start()
     {
         if (player != null)
         {
@@ -82,7 +86,24 @@ public class PlayerHide : Interactable
         animating = false;
     }
 
-    private void TeleportPlayer(Vector3 position, Quaternion rotation)
+    public new void OnFocusEnter(PlayerInteractor interactor)
+    {
+        if (outline != null)
+            outline.enabled = true;
+
+ 
+    }
+
+    public new void OnFocusExit(PlayerInteractor interactor)
+    {
+        if (outline != null)
+            outline.enabled = false;
+
+      
+    }
+   
+
+private void TeleportPlayer(Vector3 position, Quaternion rotation)
     {
         if (playerController != null)
             playerController.enabled = false;
