@@ -98008,7 +98008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &956813267
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -200700,7 +200700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f161a5e1616959844801888c64ea318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScareManager
-  scareTag: Scare
+  scareObjects: []
 --- !u!1 &1924256342
 GameObject:
   m_ObjectHideFlags: 0
@@ -240767,8 +240767,8 @@ MonoBehaviour:
   awareCanOpenDoors: 1
   aggressiveChaseSpeed: 5.5
   aggressiveSearchTime: 30
-  aggressiveCooldownAfterEscape: 180
-  aggressiveCooldownAfterTorch: 180
+  aggressiveCooldownAfterEscape: 150
+  aggressiveCooldownAfterTorch: 150
   aggressiveCanOpenDoors: 1
   desperateChaseSpeed: 6
   desperateSearchTime: 40
@@ -241634,7 +241634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6672328414249530595
 Transform:
   m_ObjectHideFlags: 0

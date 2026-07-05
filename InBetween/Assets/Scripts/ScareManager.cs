@@ -1,46 +1,26 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ScareManager : MonoBehaviour
 {
-    [Header("Scare Tag")]
-    [SerializeField] private string scareTag = "Scare";
-
-    private readonly List<GameObject> scareObjects = new();
+    [Header("Scare Objects")]
+    [SerializeField] private GameObject[] scareObjects;
 
     private void Awake()
     {
-        scareObjects.Clear();
-
-        Transform[] allTransforms = Resources.FindObjectsOfTypeAll<Transform>();
-
-        foreach (Transform t in allTransforms)
-        {
-            // Ignore assets/prefabs that aren't in the scene
-            if (!t.gameObject.scene.IsValid())
-                continue;
-
-            if (t.CompareTag(scareTag))
-            {
-                GameObject root = t.root.gameObject;
-
-                if (!scareObjects.Contains(root))
-                    scareObjects.Add(root);
-            }
-        }
+        SetScares(false);
     }
 
     public void StartScares()
     {
-        SetScaresActive(true);
+        SetScares(true);
     }
 
     public void StopScares()
     {
-        SetScaresActive(false);
+        SetScares(false);
     }
 
-    private void SetScaresActive(bool active)
+    private void SetScares(bool active)
     {
         foreach (GameObject scare in scareObjects)
         {
