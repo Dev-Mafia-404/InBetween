@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Wisp_easy 4
   m_EditorClassIdentifier: Assembly-CSharp::GhostMatchDifficulty
   ghostTypeName: Wisp
-  minFrequency: 200
-  maxFrequency: 400
+  minFrequency: 0
+  maxFrequency: 100
   greenThreshold: 20
   yellowThreshold: 25
   targetJitterSpeed: 6
@@ -25,7 +25,7 @@ MonoBehaviour:
   useTimer: 0
   timerSeconds: 10
   eventFireDelay: 0
-  maxDetectionRange: 9
+  maxDetectionRange: 15
   closeRangeDistance: 3
   minVolume: 1
   maxVolume: 1

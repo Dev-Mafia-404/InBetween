@@ -35,9 +35,9 @@ public class PlayerHide : Interactable
 
     private bool playerInside;
     private bool animating;
-    private Outline outline;
+    
 
-    public Transform Transform => transform;
+ 
  
     private void Start()
     {
@@ -86,21 +86,21 @@ public class PlayerHide : Interactable
         animating = false;
     }
 
-    public new void OnFocusEnter(PlayerInteractor interactor)
-    {
-        if (outline != null)
-            outline.enabled = true;
+    //public new void OnFocusEnter(PlayerInteractor interactor)
+    //{
+    //    if (Sillouet != null)
+    //        Sillouet.enabled = true;
 
  
-    }
+    //}
 
-    public new void OnFocusExit(PlayerInteractor interactor)
-    {
-        if (outline != null)
-            outline.enabled = false;
+    //public new void OnFocusExit(PlayerInteractor interactor)
+    //{
+    //    if (Sillouet != null)
+    //        Sillouet.enabled = false;
 
       
-    }
+    //}
    
 
 private void TeleportPlayer(Vector3 position, Quaternion rotation)

@@ -67,7 +67,7 @@ public class EnemyTorch : MonoBehaviour
     float cooldownRemaining;
     Coroutine flashRoutine;
 
-    void Start()
+    void Awake()
     {
         CurrentCharges = Mathf.Clamp(startingCharges, 0, maxCharges);
         if (torchLight != null) torchLight.color = defaultColor;

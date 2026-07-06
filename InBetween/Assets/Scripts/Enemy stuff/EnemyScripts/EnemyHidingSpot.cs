@@ -37,7 +37,10 @@ public class EnemyHidingSpot : MonoBehaviour
 
         Collider col = GetComponent<Collider>();
         if (col != null && !col.isTrigger)
+        {
+            col.isTrigger = true;   
             Debug.LogWarning($"[EnemyHidingSpot] '{name}' collider is not set to Is Trigger — it won't detect the player.");
+        }
     }
 
     bool IsPlayer(Collider other)

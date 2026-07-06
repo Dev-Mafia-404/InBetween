@@ -171,6 +171,10 @@ public class Enemy : MonoBehaviour
     [Tooltip("Keep the visual hidden through the whole appear window (shown only once it starts hunting).")]
     public bool hideWhileAppearing = true;
 
+    [Header("Special Spawn (event-triggered one-shot)")]
+    [Tooltip("Cooldown used ONLY when TriggerSpecialSpawn() is called via a UnityEvent. Bypasses whatever state/cooldown the enemy is currently in, waits this long, then spawns. After that one spawn cycle, normal phase-based cooldowns resume automatically.")]
+    public float specialSpawnCooldown = 10f;
+
     [Header("Read-Only State")]
     public State currentState = State.Cooldown;
     public float cooldownTimeRemaining;
@@ -253,6 +257,20 @@ public class Enemy : MonoBehaviour
         }
         SetState(State.Cooldown);
         cooldownTimeRemaining = float.MaxValue; // dormant until the phase manager wakes it
+
+        // If we loaded into an in-progress save (chapter 2 or 3), the enemy is already
+        // awakened — the first soul was resolved long before this scene loaded.
+        // LoadProgress on the phase manager sets soulsResolved/CurrentPhase directly WITHOUT
+        // firing OnAwakened, so we self-awaken here based on soulsResolved > 0. Phase-appropriate
+        // tuning (chase speed, search time, cooldowns) is already correct via the phase manager's
+        // property getters, so nothing else needs changing.
+        if (phaseManager != null && phaseManager.soulsResolved > 0 &&
+            phaseManager.CurrentPhase != EnemyPhaseManager.Phase.Dormant &&
+            phaseManager.CurrentPhase != EnemyPhaseManager.Phase.Dissolved)
+        {
+            Log($"Loaded into an in-progress save (soulsResolved={phaseManager.soulsResolved}, phase={phaseManager.CurrentPhase}). Starting initial cooldown without waiting for OnAwakened.");
+            StartCooldown(phaseManager.CooldownAfterEscape);
+        }
     }
 
     void OnEnable()
@@ -1298,6 +1316,58 @@ public class Enemy : MonoBehaviour
         if (currentState == State.Cooldown || currentState == State.Withdrawn) return;
         Log($"ForceWithdraw (startCooldown={startCooldown}).");
         BeginWithdrawal(phaseManager != null ? phaseManager.CooldownAfterEscape : 180f, startCooldown);
+    }
+
+    /// <summary>
+    /// Event-callable one-shot: bypasses whatever state or cooldown the enemy is currently in,
+    /// waits specialSpawnCooldown seconds, then spawns via the normal spawner flow. After that
+    /// spawn cycle finishes (withdraws/torched/caught), cooldowns return to normal phase-based
+    /// values automatically. Ignores the minTimeBetweenSpawns floor by design.
+    /// </summary>
+    public void TriggerSpecialSpawn()
+    {
+        if (phaseManager == null)
+        {
+            Log("TriggerSpecialSpawn IGNORED — no phaseManager assigned.");
+            return;
+        }
+        if (phaseManager.soulsResolved <= 0)
+        {
+            Log("TriggerSpecialSpawn IGNORED — no souls resolved yet, enemy is not permitted to spawn.");
+            return;
+        }
+        if (phaseManager.CurrentPhase == EnemyPhaseManager.Phase.Dissolved)
+        {
+            Log("TriggerSpecialSpawn IGNORED — enemy is dissolved (all souls resolved).");
+            return;
+        }
+        if (currentState == State.Frozen)
+        {
+            Log("TriggerSpecialSpawn IGNORED — frozen (dialogue in progress).");
+            return;
+        }
+
+        // Silently reset whatever's currently happening. No fade, no withdrawal animation —
+        // this is a scripted event override, not a normal escape.
+        if (agent != null && agent.enabled)
+        {
+            agent.isStopped = true;
+            agent.enabled = false;
+        }
+        SetVisible(false);
+        SetStateLoop(null);
+        if (voiceAudioSource != null) voiceAudioSource.Stop();
+        if (footstepAudioSource != null) footstepAudioSource.Stop();
+        hasLOS = false;
+        ClearWatching();
+        spawnRetryQueued = false;
+
+        // Set cooldown directly — bypasses StartCooldown's minTimeBetweenSpawns floor,
+        // which is the whole point of the "special" cooldown.
+        cooldownTimeRemaining = Mathf.Max(0.1f, specialSpawnCooldown);
+        SetState(State.Cooldown);
+        Log($"TriggerSpecialSpawn — bypassed current state, will spawn in {cooldownTimeRemaining:F1}s. Normal cooldowns will resume after this spawn cycle.");
+        OnCooldownStarted?.Invoke();
     }
 
     // ---------------------------------------------------------------

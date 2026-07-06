@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 using TMPro;
 
 /// <summary>
@@ -79,6 +80,27 @@ public class GameStateManager : MonoBehaviour
         LoadAndApply();
     }
 
+    void Start()
+    {
+        // Fire the initial OnChapterXStart AFTER all other components' Start() methods have run.
+        // Firing during Awake was too early: any listener that modifies state which another
+        // script initializes in its own Start (e.g. EnemyTorch adding charges only to have them
+        // reset when EnemyTorch.Start runs) would silently lose that state. Waiting one frame
+        // guarantees every Start has completed before we fire.
+        StartCoroutine(FireInitialChapterStartNextFrame());
+    }
+
+    IEnumerator FireInitialChapterStartNextFrame()
+    {
+        yield return null; // wait one frame — all Starts have now run
+        switch (currentChapter)
+        {
+            case Chapter.Chapter1: OnChapter1Start?.Invoke(); Log("OnChapter1Start fired (deferred, post-Start)."); break;
+            case Chapter.Chapter2: OnChapter2Start?.Invoke(); Log("OnChapter2Start fired (deferred, post-Start)."); break;
+            case Chapter.Chapter3: OnChapter3Start?.Invoke(); Log("OnChapter3Start fired (deferred, post-Start)."); break;
+        }
+    }
+
     void Update()
     {
         // Poll soul count each frame — cheap int compare, fine for horror-game pacing.
@@ -124,7 +146,7 @@ public class GameStateManager : MonoBehaviour
             Log("WARNING: phaseManager reference is null. Soul tracking disabled.");
         }
 
-        ApplyChapterState(currentChapter, fireStartEvent: true);
+        ApplyChapterState(currentChapter, fireStartEvent: false);
     }
 
     private void TrySyncPhaseManager(int souls)
